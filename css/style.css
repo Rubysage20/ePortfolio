@@ -91,7 +91,6 @@ header p {
 /* Navigation with Glassmorphism */
 nav {
     background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
     box-shadow: 0 4px 15px rgba(184, 134, 134, 0.2);
     position: sticky;
     top: 0;
