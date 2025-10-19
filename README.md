@@ -14,7 +14,7 @@ This repository contains my professional ePortfolio showcasing my growth and ach
 - **Enhancement 2: Algorithms & Data Structures** - Performance optimization
 - **Enhancement 3: Databases** - MongoDB integration and full-stack implementation
 
-### 🎯 Project Highlights
+###  Project Highlights
 
 **Hospital Management System**
 - Full-stack web application (React + Spring Boot + MongoDB)
