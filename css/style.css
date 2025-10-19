@@ -73,11 +73,7 @@ header h1 {
     text-rendering: optimizeLegibility;
     position: relative;
     z-index: 3;
-  -webkit-text-fill-color: #ffffff !important;
-    color: #ffffff !important;
-    background: none !important;
-    -webkit-background-clip: initial !important;
-    background-clip: initial !important;
+  
 }
 
 header p {
