@@ -1,1 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhancement 1: Software Design | Valerie Dawson</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Valerie Dawson</h1>
+            <p>Computer Science Capstone ePortfolio | CS 499</p>
+            <p>Southern New Hampshire University</p>
+        </div>
+    </header>
 
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="code-review.html">Code Review</a></li>
+            <li><a href="enhancement1.html" class="active">Software Design</a></li>
+            <li><a href="enhancement2.html">Algorithms</a></li>
+            <li><a href="enhancement3.html">Databases</a></li>
+            <li><a href="artifacts.html">Code Artifacts</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <h1>Enhancement 1: Software Design and Engineering</h1>
+        
+        <!--  ENHANCEMENT 1 CONTENT HERE -->
+       
+        
+        <section>
+            <h2>Artifact Description</h2>
+            <p>The artifact enhanced for this milestone is the Hospital Management System, originally developed as a console-based Java application with fixed data structures. The original version was created during my coursework while completing my Associates of Applied Science for Information Technology and relied on hardcoded arrays to store doctors, patients, and employees. While functional for demonstration purposes, this design limited scalability, maintainability, and real-world applicability.
+            The artifact was selected because it provided an excellent foundation to demonstrate advanced software engineering principles. The system's core functionality of managing healthcare data and workflows is relevant to industry needs, making it an ideal candidate to showcase my ability to transform a basic application into a professional, scalable solution.
+p>
+        </section>
+
+        <section>
+            <h2>Justification for Inclusion</h2>
+            <p>I selected this artifact for Enhancement 1 because it allowed me to demonstrate mastery of software design and engineering principles that are critical in professional development environments. The enhancements I implemented showcase several key competencies:
+
+•	Architectural Redesign: I transformed the monolithic console application into a modular, layered architecture following the Repository pattern. This separation of concerns between data access, business logic, and presentation layers reflects industry-standard practices used in enterprise applications.
+•	Encapsulation and Abstraction: By introducing repository interfaces (DoctorRepository, PatientRepository, EmployeeRepository), I created an abstraction layer that decouples the application logic from data storage implementation. This design decision makes the codebase more flexible and easier to maintain.
+•	Scalability Improvements: Replacing fixed-size arrays with dynamic collection-based repositories eliminated artificial constraints on data volume. The system can now handle growing datasets without code modifications, demonstrating my understanding of scalable design principles.
+•	Code Quality and Maintainability: I implemented comprehensive validation through a centralized ValidationUtils class, added immutable identifiers for data integrity, and documented the entire codebase with Javadoc comments. These improvements make the code more readable, testable, and maintainable–essential qualities in collaborative development environments.
+•	Industry-Ready Design Patterns: The use of interfaces, dependency injection principles, and separation of concerns demonstrates my ability to apply design patterns that are widely used in professional software development. This positions the artifact as representative of production-quality code rather than academic exercises.
+•	The enhancement improved the artifact by transforming it from a rigid, demonstration-focused application into a flexible, professional-grade system ready for further enhancement and deployment. The modular design now supports easy integration with databases, REST APIs, and front-end interfaces without requiring fundamental restructuring.
+</p>
+        </section>
+
+        <section>
+            <h2>Skills Demonstrated</h2>
+            <p>Through this enhancement, I demonstrated proficiency in:
+•	Object-Oriented Design: Proper use of interfaces, inheritance, and polymorphism 
+•	Design Patterns: Repository pattern, Factory pattern considerations 
+•	Code Organization: Layered architecture with clear separation of concerns 
+•	Data Validation: Centralized validation logic for data integrity 
+•	Documentation: Professional-level code comments and Javadoc 
+•	Refactoring: Systematic improvement of existing code without breaking functionality 
+•	Best Practices: Following Java naming conventions, SOLID principles, and clean code practices
+</p>
+        </section>
+
+        <section>
+            <h2>Reflection on the Enhancement Process</h2>
+            <h3>Learning and Growth</h3>
+            <p>The process of enhancing this artifact significantly deepened my understanding of software architecture and design principles. Initially, I underestimated the complexity involved in properly abstracting data access logic. Through research and experimentation, I learned that good abstraction requires careful planning to ensure the interface is neither too specific (limiting flexibility) nor too generic (creating confusion).
+One of the most valuable lessons came from implementing the repository pattern. I learned that separating "what" operations the application needs from "how" those operations are performed creates enormous flexibility. This abstraction allowed me to create an in-memory implementation first for testing, with the knowledge that I could later swap it for a MongoDB implementation without changing any business logic.
+</p>
+            
+            <h3>Challenges Encountered</h3>
+            <p>Challenge 1: Refactoring Without Breaking Functionality
+The primary challenge was restructuring the application while maintaining existing functionality. The original code had tightly coupled components where data access, validation, and presentation logic were intermingled. I addressed this by:
+1.	Creating comprehensive unit tests for existing functionality before refactoring
+2.	Implementing new repository interfaces alongside old code
+3.	Gradually migrating functionality to the new architecture
+4.	Verifying each component worked correctly before removing legacy code
+This systematic approach prevented breaking changes and ensured a smooth transition.</p>
+
+<p>Challenge 2: Designing Flexible Interfaces
+Designing repository interfaces that would support both in-memory and database implementations required careful consideration. I initially created interfaces that were too specific to the in-memory implementation. After reviewing and reflection, I redesigned them to be more generic, using standard CRUD operations that would work with any persistence mechanism. This taught me the importance of thinking ahead about how design decisions impact future extensibility.</p>
+
+
+<p>Challenge 3: Validation Strategy
+Determining the appropriate location for validation logic was challenging. I initially placed validation in individual methods across different classes, which created duplication and inconsistency. I resolved this by creating the ValidationUtils class to centralize all validation logic. This decision improved code reusability, introducing validation consistently across the application, and simplified testing.</p>
+
+            <p> Incorporation of Feedback
+Throughout the development process, I incorporated feedback from code reviews and self-evaluation. Early feedback indicated that my initial repository design was too tightly coupled to the data structure. I addressed this by:
+•	Revising interfaces to use more generic parameter types
+•	Implementing builder patterns for complex object creation
+•	Adding comprehensive error handling with descriptive messages
+•	Improving documentation to explain design decisions
+I also decided the need for better separation between presentation and business logic should be implemented. This led me to create dedicated service classes that handle business rules, keeping the presentation layer focused solely on user interaction.</p>
+
+
+            
+            <h3>Meeting Course Outcomes</h3>
+            <p>This enhancement directly addresses the following course outcomes: <ol>
+
+<li>Course Outcome 2: Professional-Quality Communications The comprehensive Javadoc documentation, clear method naming, and well-organized code structure demonstrate my ability to create technically sound communications adapted to a developer audience. The code itself serves as documentation through its clarity and organization.</li>
+
+<li>Course Outcome 4: Well-Founded Techniques and Tools By implementing industry-standard design patterns (Repository, Factory concepts), following SOLID principles, and using proper Java conventions, I demonstrated the ability to use well-founded techniques that deliver value in real-world contexts. The modular design supports maintainability and extensibility which are key goals in software development.</li>
+
+<li>Course Outcome 5: Security Mindset The centralized validation logic in ValidationUtils demonstrates anticipation of potential vulnerabilities such as null pointer exceptions, invalid data entry, and data integrity issues. By validating all inputs and using immutable identifiers, I mitigated design flaws that could compromise data security and system stability. </li>
+
+<li>The one outcome not fully addressed in this enhancement is Course Outcome 1 (Collaborative Environments). While the modular design and clear documentation support collaboration, this artifact focused primarily on individual design improvements rather than team-based development processes.</li>
+</ol></p>
+        </section>
+
+        <section>
+            <h2>Tools and Technologies Used</h2>
+            <p><ol>
+              <li>•	Java 17: Modern Java features including records, enhanced switch statements</li>
+<li>•	Eclipse IDE: Primary development environment</li>
+<li>•	Git/GitHub: Version control and code repository</li>
+<li>•	Javadoc: API documentation generation</li>
+<li>•	JUnit (for testing validation and repository logic)</li>
+</ol></p>
+        </section>
+
+        <section>
+            <h2>Next Steps</h2>
+            <p>The architectural improvements in this enhancement laid the groundwork for subsequent enhancements:
+1.	Database Integration: The repository pattern makes transitioning to MongoDB straightforward
+2.	REST API Development: The service layer can easily support RESTful endpoints
+3.	Front-End Integration: Clean separation of concerns enables front-end frameworks to consume the business logic
+4.	Enhanced Security: The modular design supports adding authentication and authorization layers
+</p>
+        </section>
+
+        <section>
+            <h2>Conclusion</h2>
+            <p>Enhancement 1 transformed the Hospital Management System from a basic demonstration application into a professionally architected solution ready for production use. Through systematic refactoring, implementation of design patterns, and adherence to software engineering best practices, I demonstrated my ability to design, develop, and deliver high-quality software solutions. This enhancement reflects growth in my understanding of software architecture and positions me as a developer capable of building scalable, maintainable applications that meet industry standards.</p>
+        </section>
+
+        <div style="margin-top: 2rem;">
+            <a href="enhancement2.html" class="btn">Next: Algorithms →</a>
+            <a href="artifacts.html" class="btn">View Code</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Valerie Dawson | CS 499 Computer Science Capstone | Southern New Hampshire University</p>
+    </footer>
+</body>
+</html
