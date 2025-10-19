@@ -63,7 +63,6 @@ header {
 header h1 {
     margin-bottom: 0.5rem;
     font-size: 2.8rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     position: relative;
     z-index: 1;
 }
@@ -99,6 +98,7 @@ nav li {
 }
 
 nav a {
+  display: inline-block
     color: #8b5a5a;
     text-decoration: none;
     font-weight: 600;
@@ -112,7 +112,7 @@ nav a {
 nav a:hover {
     background: linear-gradient(135deg, #b88686 0%, #c59484 100%);
     color: white;
-    transform: translateY(-2px);
+    transform: translateY(-1px);
     box-shadow: 0 5px 15px rgba(184, 134, 134, 0.4);
 }
 
