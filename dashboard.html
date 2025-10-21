@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View the Dashboard | Valerie Dawson ePortfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Valerie Dawson</h1>
+            <p>Computer Science Capstone ePortfolio | CS 499</p>
+            <p>Southern New Hampshire University</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="code-review.html">Code Review</a></li>
+            <li><a href="enhancement1.html">Software Design</a></li>
+            <li><a href="enhancement2.html">Algorithms</a></li>
+            <li><a href="enhancement3.html">Databases</a></li>
+            <li><a href="artifacts.html">Code Artifacts</a></li>
+            <li><a href="dashboard.html" class="active">View the Dashboard</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <h1>HospitalDash - System Overview</h1>
+        
+        <h2>Visual Walkthrough</h2>
+        <p>To help recruiters and stakeholders understand the scope and functionality of the HospitalDash system, below are key screenshots showcasing the platform's features and architecture.</p>
+
+        <!-- Screenshot 1: Login -->
+        <div class="screenshot-container">
+            <h3>1. Login Page</h3>
+            <h4>Secure Login for Administrators and Staff</h4>
+            <img src="screenshots/login.png" alt="HospitalDash Login Page" class="screenshot">
+            <p>The authentication interface features a clean, user-friendly design with secure credential validation. Demo credentials are provided for testing purposes, ensuring easy access for reviewers while maintaining production-ready security protocols.</p>
+        </div>
+
+        <!-- Screenshot 2: Dashboard -->
+        <div class="screenshot-container">
+            <h3>2. Dashboard Overview</h3>
+            <h4>Comprehensive Admin Dashboard for Real-Time Data Management</h4>
+            <img src="screenshots/dashboard.png" alt="HospitalDash Dashboard Overview" class="screenshot">
+            <p>The main administrative panel displays critical metrics at a glance, including total patients, scheduled appointments, active doctors, and employee counts. The "Recent Activity" section provides real-time updates on patient appointments, while "Quick Stats" offer detailed insights into appointments, active doctors, and patient records.</p>
+        </div>
+
+        <!-- Screenshot 3: Patient Management -->
+        <div class="screenshot-container">
+            <h3>3. Patient Management Page</h3>
+            <h4>Dynamic Patient Management with MongoDB Integration</h4>
+            <img src="screenshots/patients.png" alt="Patient Management Interface" class="screenshot">
+            <p>This interface demonstrates full CRUD (Create, Read, Update, Delete) operations for patient records. Users can add new patients with comprehensive details including name, address, and primary care physician. The data table provides an organized view of all patient information with quick-access edit and delete functions.</p>
+        </div>
+
+        <!-- Screenshot 4: Employee Management -->
+        <div class="screenshot-container">
+            <h3>4. Employee Management</h3>
+            <h4>Streamlined Employee Management System</h4>
+            <img src="screenshots/employees.png" alt="Employee Management System" class="screenshot">
+            <p>The employee management module allows administrators to track staff details including roles, contact information, hourly rates, and monthly working hours. This integrated approach ensures efficient workforce management and payroll calculation.</p>
+        </div>
+
+        <!-- Screenshot 5: Appointments -->
+        <div class="screenshot-container">
+            <h3>5. Appointment Scheduling</h3>
+            <h4>Streamlined Appointment Scheduling Interface</h4>
+            <img src="screenshots/appointments.png" alt="Appointment Scheduling Interface" class="screenshot">
+            <p>The appointment scheduling system features an intuitive calendar interface for selecting dates and times. Administrators can assign doctors to patients, track appointment statuses (Scheduled, Completed), and manage the entire scheduling workflow from a single, organized interface.</p>
+        </div>
+
+        <!-- Screenshot 6: Reports -->
+        <div class="screenshot-container">
+            <h3>6. Reports & Payroll</h3>
+            <h4>Financial Analytics and Payroll Processing</h4>
+            <img src="screenshots/reports.png" alt="Reports and Payroll Dashboard" class="screenshot">
+            <p>The reports module provides comprehensive financial insights, including total payroll calculations, doctor-specific earnings based on patient visits, and employee compensation tracking. Detailed breakdowns show specialty-wise performance and hour-based employee earnings.</p>
+        </div>
+
+        <!-- Screenshot 7: Doctors Management -->
+        <div class="screenshot-container">
+            <h3>7. Doctors Management</h3>
+            <h4>Medical Staff Administration Portal</h4>
+            <img src="screenshots/doctors.png" alt="Doctors Management Portal" class="screenshot">
+            <p>This section enables complete management of medical staff, including specialty assignment, address tracking, office visit fee configuration, and patient visit monitoring. The system maintains detailed records of each doctor's performance metrics.</p>
+        </div>
+
+        <!-- Key Features -->
+        <div class="key-features">
+            <h2>Key Features Demonstrated</h2>
+            <ul class="features-list">
+                <li>✅ <strong>Full-Stack Development</strong> - Complete integration from UI to database</li>
+                <li>✅ <strong>RESTful API Design</strong> - Custom endpoints for all CRUD operations</li>
+                <li>✅ <strong>Responsive Design</strong> - Mobile-friendly, modern UI/UX</li>
+                <li>✅ <strong>Real-Time Data</strong> - Live updates and dynamic content rendering</li>
+                <li>✅ <strong>Secure Authentication</strong> - Role-based access control</li>
+                <li>✅ <strong>Cloud Deployment</strong> - Production-ready AWS infrastructure</li>
+                <li>✅ <strong>Database Management</strong> - Efficient NoSQL data modeling with MongoDB</li>
+            </ul>
+        </div>
+
+        <!-- API Testing -->
+        <div class="api-section">
+            <h2>API Testing Preview</h2>
+            <h3>Custom REST APIs Built in Spring Boot for Data Flow Control</h3>
+            
+            <p>Example API endpoints tested via Postman:</p>
+            
+            <div class="api-endpoints">
+                <pre><code>GET    /api/patients          - Retrieve all patients
+POST   /api/patients          - Create new patient
+PUT    /api/patients/{id}     - Update patient information
+DELETE /api/patients/{id}     - Delete patient record
+
+GET    /api/appointments      - Retrieve all appointments
+POST   /api/appointments      - Schedule new appointment
+GET    /api/doctors           - Retrieve all doctors
+POST   /api/doctors           - Add new doctor
+
+GET    /api/reports/payroll   - Generate payroll reports</code></pre>
+            </div>
+            
+            <p>All endpoints return standardized JSON responses with proper HTTP status codes and error handling.</p>
+        </div>
+
+        <div style="margin-top: 3rem; text-align: center;">
+            <a href="code-review.html" class="btn">Watch Code Review</a>
+            <a href="artifacts.html" class="btn">View Code Artifacts</a>
+            <a href="https://github.com/Rubysage20" class="btn" target="_blank">View GitHub Profile</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Valerie Dawson | CS 499 Computer Science Capstone | Southern New Hampshire University</p>
+    </footer>
+</body>
+</html>
