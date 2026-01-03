@@ -9,9 +9,11 @@
 <body>
     <header>
         <div class="container">
-            <h1>Valerie Dawson</h1>
-            <p>Computer Science Capstone ePortfolio | CS 499</p>
-            <p>Southern New Hampshire University</p>
+            <div class="header-content">
+                <h1>Valerie Dawson</h1>
+                <p class="header-subtitle">Computer Science Graduate</p>
+                <p class="header-meta">Southern New Hampshire University</p>
+            </div>
         </div>
     </header>
 
@@ -28,347 +30,437 @@
     </nav>
 
     <main class="container">
-        <h1>Enhancement 3: Databases</h1>
+        <h1>Enhancement 3: Databases and Full-Stack Development</h1>
         
-        <section>
-            <h2>Artifact Description</h2>
-            <p>For Enhancement 3, I continued developing the Hospital Management System with a focus on implementing persistent data storage using MongoDB. The artifact originated from earlier coursework but was significantly enhanced through the capstone process. Prior to this enhancement, the system stored all data in memory, meaning patient records, doctor information, appointments, and payroll data were lost when the application closed. This limitation made the system unsuitable for production use.</p>
+        <!-- ACCORDION 1: Artifact Description -->
+        <div class="accordion-section">
+            <div class="accordion-header">
+                <div class="accordion-title">
+                    <h2>Artifact Description</h2>
+                </div>
+                <span class="accordion-icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <p>For Enhancement 3, I completed the transformation of the Hospital Management System from a console-based application into a production-ready full-stack web application. This final enhancement integrated MongoDB for persistent data storage, built a Spring Boot REST API backend, and created a React dashboard for the front-end interface. The enhancement also included implementing JWT authentication for secure user access.</p>
 
-            <p>The artifact was selected because healthcare applications require reliable, persistent data storage with quick retrieval capabilities. Hospitals cannot afford to lose patient information or appointment schedules, making database integration critical for any real-world deployment. This enhancement transformed the system from a demonstration application into a production-viable backend capable of supporting actual hospital operations.</p>
-        </section>
+                <p>The original artifact stored all data in memory using Java arrays, meaning all information was lost when the program closed. This limitation made the system unsuitable for real-world use. Enhancement 3 addressed this fundamental flaw by implementing a complete database layer with MongoDB, transforming the application into a genuine enterprise-ready system.</p>
+            </div>
+        </div>
 
-        <section>
-            <h2>Justification for Inclusion</h2>
-            <p>I selected this artifact for Enhancement 3 because it provided an excellent opportunity to demonstrate comprehensive database design and implementation skills essential in modern software development. The healthcare domain presents unique database challenges that allowed me to showcase multiple competencies:</p>
+        <!-- ACCORDION 2: Justification for Inclusion -->
+        <div class="accordion-section">
+            <div class="accordion-header">
+                <div class="accordion-title">
+                    <h2>Justification for Inclusion</h2>
+                </div>
+                <span class="accordion-icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <p>I selected this artifact for Enhancement 3 because database integration is essential for any production application, and healthcare systems particularly demand reliable data persistence, scalability, and security. This enhancement allowed me to demonstrate comprehensive full-stack development skills and database management expertise.</p>
 
-            <h3>Persistent Data Storage</h3>
-            <p>Healthcare systems must maintain records indefinitely. By integrating MongoDB, I ensured that all patient histories, appointment records, and employee information persist across application sessions. This addresses one of the most critical requirements in healthcare IT: data permanence and reliability.</p>
+                <h3>Database Design and Implementation</h3>
+                <p>I designed and implemented a MongoDB database schema with four collections:</p>
+                <ul>
+                    <li><strong>Doctors Collection:</strong> Stores physician information including specialty, office visit fees, and patient visit counts</li>
+                    <li><strong>Patients Collection:</strong> Maintains patient records with demographic information and primary care physician assignments</li>
+                    <li><strong>Appointments Collection:</strong> Tracks scheduling data with references to doctors and patients</li>
+                    <li><strong>Employees Collection:</strong> Manages hospital staff information, roles, and payroll data</li>
+                </ul>
 
-            <h3>NoSQL Database Design</h3>
-            <p>Rather than using traditional relational databases, I selected MongoDB for its flexibility with document-based storage. Healthcare data often includes varying attributes (not all patients have the same medical conditions or insurance types), and MongoDB's schema-less design accommodates this variability naturally. This choice demonstrates understanding of when NoSQL solutions are more appropriate than SQL databases.</p>
+                <h3>Why MongoDB?</h3>
+                <p>I chose MongoDB (NoSQL) over a traditional relational database because:</p>
+                <ul>
+                    <li><strong>Flexible Schema:</strong> Healthcare data models evolve frequently. MongoDB's document-based structure allows adding fields without schema migrations</li>
+                    <li><strong>Horizontal Scalability:</strong> MongoDB scales out easily as patient volumes grow</li>
+                    <li><strong>JSON-like Documents:</strong> Natural fit for REST APIs and modern JavaScript front-ends</li>
+                    <li><strong>Rapid Development:</strong> Faster iteration during development without complex schema changes</li>
+                </ul>
 
-            <h3>Scalability</h3>
-            <p>The MongoDB implementation supports horizontal scaling, allowing the system to grow from a small clinic to a large hospital network without architectural changes. This forward-thinking design reflects professional development practices where systems must accommodate future growth.</p>
+                <h3>RESTful API Development</h3>
+                <p>I built a comprehensive REST API using Spring Boot that provides:</p>
+                <ul>
+                    <li>Complete CRUD operations for all entities</li>
+                    <li>Proper HTTP status codes and error handling</li>
+                    <li>CORS configuration for secure cross-origin requests</li>
+                    <li>Input validation and data sanitization</li>
+                    <li>Structured JSON responses for front-end consumption</li>
+                </ul>
 
-            <h3>Performance Optimization</h3>
-            <p>I implemented indexing strategies on frequently queried fields (doctor specialty, patient last name, appointment dates) to ensure fast data retrieval even as collections grow to thousands of records. Query optimization demonstrates understanding of how database design directly impacts application performance and user experience.</p>
+                <h3>Front-End Development</h3>
+                <p>The React dashboard demonstrates modern front-end capabilities:</p>
+                <ul>
+                    <li>Real-time data visualization using Recharts library</li>
+                    <li>Interactive forms for managing hospital records</li>
+                    <li>Responsive design for desktop and mobile devices</li>
+                    <li>Professional UI following Material Design principles</li>
+                </ul>
 
-            <h3>Data Integrity</h3>
-            <p>The repository pattern combined with validation logic ensures data consistency. Each MongoDB collection has validation rules, and the application layer provides additional checks before data persistence. This multi-layered validation prevents data corruption and maintains referential integrity without foreign key constraints.</p>
+                <h3>Security Implementation</h3>
+                <p>I implemented JWT (JSON Web Token) authentication providing:</p>
+                <ul>
+                    <li>Secure user login with token generation</li>
+                    <li>Password encryption using BCrypt</li>
+                    <li>Protected API endpoints requiring valid authentication</li>
+                    <li>Role-based access control foundation</li>
+                </ul>
 
-            <p>The enhancement improved the artifact by transforming it from a temporary, demonstration-focused system into a production-ready application with:</p>
-            <ul>
-                <li>True data persistence across sessions</li>
-                <li>Efficient query performance through proper indexing</li>
-                <li>Scalable architecture supporting hospital growth</li>
-                <li>Data integrity through validation and constraints</li>
-                <li>Professional connection management and error handling</li>
-            </ul>
-        </section>
+                <p>The enhancement improved the artifact by making it a complete, deployable application suitable for real hospital use. The system now persists data reliably, serves multiple concurrent users through a web interface, and maintains security best practices.</p>
+            </div>
+        </div>
 
-        <section>
-            <h2>Skills Demonstrated</h2>
-            <p>Through this enhancement, I demonstrated proficiency in:</p>
-            <ul>
-                <li><strong>NoSQL Database Design:</strong> Schema design for MongoDB collections</li>
-                <li><strong>Connection Management:</strong> Singleton pattern for database connections, connection pooling</li>
-                <li><strong>CRUD Operations:</strong> Create, Read, Update, Delete operations across multiple collections</li>
-                <li><strong>Query Optimization:</strong> Indexing strategies, query performance tuning</li>
-                <li><strong>Data Validation:</strong> Application-level and database-level validation</li>
-                <li><strong>Repository Pattern:</strong> Abstraction layer separating business logic from data access</li>
-                <li><strong>Error Handling:</strong> Comprehensive exception handling for database operations</li>
-                <li><strong>Data Modeling:</strong> Translating business requirements into database structure</li>
-                <li><strong>MongoDB Java Driver:</strong> Using MongoDB's official Java driver effectively</li>
-                <li><strong>BSON Document Mapping:</strong> Converting Java objects to BSON and vice versa</li>
-            </ul>
-        </section>
+        <!-- ACCORDION 3: Skills Demonstrated -->
+        <div class="accordion-section">
+            <div class="accordion-header">
+                <div class="accordion-title">
+                    <h2>Skills Demonstrated</h2>
+                </div>
+                <span class="accordion-icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <p>Through this enhancement, I demonstrated proficiency in:</p>
+                <ul>
+                    <li><strong>Database Design:</strong> Schema design, indexing strategies, and query optimization</li>
+                    <li><strong>NoSQL Databases:</strong> MongoDB CRUD operations, aggregation pipelines, and connection management</li>
+                    <li><strong>REST API Development:</strong> Building scalable APIs with Spring Boot</li>
+                    <li><strong>Front-End Development:</strong> React components, state management, and API integration</li>
+                    <li><strong>Authentication and Security:</strong> JWT implementation, password hashing, and access control</li>
+                    <li><strong>Full-Stack Integration:</strong> Connecting front-end, back-end, and database layers</li>
+                    <li><strong>Data Validation:</strong> Server-side validation and error handling</li>
+                    <li><strong>API Documentation:</strong> Clear endpoint documentation and usage examples</li>
+                </ul>
+            </div>
+        </div>
 
-        <section>
-            <h2>Reflection on the Enhancement Process</h2>
-            
-            <h3>Learning and Growth</h3>
-            <p>Implementing MongoDB integration significantly deepened my understanding of database systems and their role in application architecture. Prior to this enhancement, my database experience was primarily academic, completing exercises from simple prompts. This project required me to design a production-quality database system, which presented challenges and learning opportunities beyond classroom exercises.</p>
+        <!-- ACCORDION 4: Reflection on Enhancement Process -->
+        <div class="accordion-section">
+            <div class="accordion-header">
+                <div class="accordion-title">
+                    <h2>Reflection on the Enhancement Process</h2>
+                </div>
+                <span class="accordion-icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <h3>Learning and Growth</h3>
+                <p>Enhancement 3 represented the most significant learning curve of all three milestones. Integrating a database, building a REST API, and creating a React front-end required synthesizing knowledge from multiple domains. Prior to this enhancement, I had worked with each technology individually, but never integrated them into a complete full-stack application.</p>
 
-            <p>One of the most valuable lessons was understanding the differences between SQL and NoSQL databases at a practical level. While coursework explained these differences theoretically, experiencing them firsthand taught me when to choose each approach. For the Hospital Management System, MongoDB's flexibility with varying document structures made it ideal. Not all appointments have the same attributes (some are routine checkups, others are surgeries with different requirements), and MongoDB accommodates this naturally without complex table joins.</p>
+                <p>The most valuable lesson was understanding how data flows through a modern web application. Starting from a user clicking a button in React, triggering an API call to Spring Boot, which queries MongoDB and returns formatted data, then updating the UI with the response. This end-to-end understanding of the request-response cycle is fundamental to full-stack development.</p>
 
-            <p>I also gained deep appreciation for the repository pattern as an abstraction layer. By isolating database operations in repository classes, I made the system database-agnostic at the business logic level. This design decision means that if future requirements demanded switching from MongoDB to PostgreSQL, only the repository implementations would need changing. All business logic would remain intact. This architectural thinking represents a shift from student mindset to professional developer mindset.</p>
+                <p>I also gained deep appreciation for the importance of consistent data models across layers. The structure of data in MongoDB must align with the entity classes in Java, which must match the expected format in React components. Mismatches at any layer cause integration failures. Maintaining this consistency required careful planning and documentation.</p>
 
-            <p>The process of designing MongoDB collections taught me to think carefully about data relationships and access patterns. Unlike relational databases where normalization rules guide design, NoSQL requires analyzing how data will be queried and structuring documents accordingly. For example, I initially planned to store doctor specialties in a separate collection but realized that embedding them in doctor documents provided better query performance for the most common use case (searching doctors by specialty).</p>
+                <h3>Challenges Encountered</h3>
+                
+                <h4>Challenge 1: MongoDB Connection Management</h4>
+                <p>Initially, I struggled with MongoDB connection pooling and resource management. My early implementation opened a new connection for every database operation, which was inefficient and caused connection exhaustion under load.</p>
 
-            <h3>Challenges Encountered</h3>
-            
-            <h4>Challenge 1: Data Persistence and Type Mapping</h4>
-            <p>The first major challenge was correctly mapping Java object types to BSON documents in MongoDB. Initially, date fields were stored as strings, which prevented proper chronological sorting and comparison. Numeric fields sometimes saved as strings, breaking mathematical operations for payroll calculations.</p>
+                <p><strong>Solution:</strong> I implemented proper connection pooling using Spring Data MongoDB's built-in MongoClient configuration. The configuration establishes a connection pool at application startup, reuses connections across requests, properly handles connection timeouts and retries, and implements graceful shutdown to prevent data loss.</p>
 
-            <p><strong>Solution:</strong> I researched the MongoDB Java driver documentation thoroughly and implemented explicit type handling:</p>
-            <ul>
-                <li>Used LocalDateTime for all date/time fields with proper conversion to MongoDB's Date type</li>
-                <li>Ensured numeric fields (appointment IDs, payroll amounts) were stored as numbers, not strings</li>
-                <li>Created conversion utilities to handle type transformations consistently</li>
-                <li>Added validation in the ValidationUtils class to verify correct types before database insertion</li>
-            </ul>
-            <p>This experience taught me the importance of understanding how ORMs and database drivers handle type conversions, and to never assume automatic conversions will work correctly.</p>
+                <h4>Challenge 2: Cross-Origin Resource Sharing (CORS)</h4>
+                <p>When connecting the React front-end (running on localhost:3000) to the Spring Boot API (localhost:8080), I encountered CORS errors preventing the browser from making requests.</p>
 
-            <h4>Challenge 2: Appointment Conflict Detection with Database Queries</h4>
-            <p>With in-memory storage, checking for appointment conflicts was straightforward: iterate through a list. With database storage, I needed to implement efficient queries that retrieved only potentially conflicting appointments rather than loading all appointments into memory.</p>
+                <p><strong>Solution:</strong> I configured CORS in Spring Boot by creating a global CORS configuration that allows requests from the React development server, specifies allowed HTTP methods (GET, POST, PUT, DELETE), enables credentials for authentication, and sets appropriate headers for API responses.</p>
 
-            <p><strong>Solution:</strong> I designed a targeted query that:</p>
-            <ol>
-                <li>Filters by doctor ID (only appointments for the specific doctor)</li>
-                <li>Filters by date range (only appointments on the same day)</li>
-                <li>Returns minimal data (just start/end times, not full appointment objects)</li>
-                <li>Uses indexes for fast retrieval</li>
-            </ol>
-            <p>This reduced conflict checking from potentially loading thousands of appointments to retrieving typically 5-20 relevant records. The query optimization demonstrates understanding of how to work with databases efficiently rather than treating them as simple data stores.</p>
+                <h4>Challenge 3: Asynchronous Data Loading in React</h4>
+                <p>Managing asynchronous API calls in React components was initially confusing. State updates triggered re-renders at unexpected times, causing infinite loops or stale data displays.</p>
 
-            <h4>Challenge 3: Connection Management and Resource Leaks</h4>
-            <p>Early implementations created new MongoDB connections for each operation, which quickly exhausted available connections and caused application crashes. I also initially forgot to close database cursors, leading to memory leaks during testing with large datasets.</p>
+                <p><strong>Solution:</strong> I implemented proper React patterns by using useEffect hooks with dependency arrays to control when API calls execute, implementing loading states to provide user feedback during data fetches, properly handling errors with try-catch blocks and user-friendly error messages, and using async/await for cleaner asynchronous code.</p>
 
-            <p><strong>Solution:</strong> I implemented the Singleton pattern in the MongoConnection class:</p>
-            <ul>
-                <li>Single connection instance shared across the application</li>
-                <li>Proper connection pooling configuration</li>
-                <li>Try-with-resources blocks to ensure cursors and resources are always closed</li>
-                <li>Graceful connection shutdown in application cleanup</li>
-            </ul>
-            <p>I also added connection testing in the main application startup to fail fast if MongoDB is unavailable, rather than allowing the application to start and then fail on first database operation.</p>
+                <h4>Challenge 4: Data Validation Across Layers</h4>
+                <p>Ensuring data integrity required validation at multiple points: client-side in React forms, server-side in Spring Boot controllers, and at the database level with MongoDB schemas.</p>
 
-            <h4>Challenge 4: Data Synchronization Between Repositories</h4>
-            <p>When creating appointments, I needed to ensure referenced doctors and patients existed in their respective collections. Initially, appointments could reference non-existent doctors or patients, causing null pointer exceptions when generating reports.</p>
+                <p><strong>Solution:</strong> I implemented a three-tier validation strategy:</p>
+                <ol>
+                    <li><strong>Client-Side:</strong> React form validation for immediate user feedback</li>
+                    <li><strong>Server-Side:</strong> Spring Boot validation annotations ensuring API integrity</li>
+                    <li><strong>Database-Side:</strong> MongoDB schema validation as the final safeguard</li>
+                </ol>
+                <p>This defense-in-depth approach prevents invalid data from entering the system at any level.</p>
 
-            <p><strong>Solution:</strong> I implemented validation logic in the AppointmentScheduler class to verify entities exist before saving appointments. This enforces referential integrity at the application level, compensating for NoSQL's lack of foreign key constraints. The solution demonstrates understanding that data integrity is the developer's responsibility when using NoSQL databases.</p>
+                <h4>Challenge 5: JWT Authentication Integration</h4>
+                <p>Implementing JWT authentication required understanding token generation, validation, and refresh mechanisms. I also needed to integrate authentication across both the API and React front-end.</p>
 
-            <h4>Challenge 5: Environment-Specific Configuration</h4>
-            <p>Developing locally with MongoDB required different connection strings than deployment environments. Hardcoding connection strings in the MongoConnection class created problems when moving between environments and posed security risks.</p>
+                <p><strong>Solution:</strong> I created a comprehensive authentication system with a login endpoint that generates JWT tokens, a token validation filter that protects API endpoints, token storage in localStorage on the client side, and automatic token inclusion in API requests via Axios interceptors.</p>
 
-            <p><strong>Solution:</strong> I externalized configuration:</p>
-            <ul>
-                <li>Created a properties file for environment-specific settings</li>
-                <li>Used environment variables for sensitive connection strings</li>
-                <li>Implemented configuration loading in the MongoConnection class</li>
-                <li>Documented setup requirements for different environments</li>
-            </ul>
-            <p>This approach follows twelve-factor app principles and makes the application deployable to various environments without code changes.</p>
+                <h3>Incorporation of Feedback</h3>
+                <p>Throughout development, I received feedback on code organization and error handling:</p>
 
-            <h3>Incorporation of Feedback</h3>
-            <p>Throughout the enhancement process, I incorporated feedback from multiple sources:</p>
+                <ol>
+                    <li><strong>Separating Concerns:</strong> Initially, I had database logic mixed with controller logic. I refactored to use service classes that handle business logic, keeping controllers thin and focused on HTTP concerns.</li>
+                    
+                    <li><strong>Error Handling Improvement:</strong> Early API implementations returned generic error messages. I enhanced error handling to return specific, actionable error information including HTTP status codes that match the error type, detailed error messages for debugging, and sanitized error responses that don't expose system internals.</li>
+                    
+                    <li><strong>API Response Standardization:</strong> Feedback indicated inconsistent response formats made front-end integration difficult. I standardized all API responses to follow a consistent structure with data payload, status information, and error details when applicable.</li>
+                    
+                    <li><strong>Code Documentation:</strong> I added comprehensive documentation including API endpoint documentation with examples, database schema documentation, setup instructions for running the full stack, and inline comments explaining complex logic.</li>
+                </ol>
+            </div>
+        </div>
 
-            <h4>Code Review Feedback</h4>
-            <p>Early feedback indicated that my error messages were too technical and wouldn't help end users diagnose problems. I revised error handling to provide:</p>
-            <ul>
-                <li>User-friendly messages for common issues ("Unable to connect to database. Please contact your system administrator.")</li>
-                <li>Technical details logged to console for developer troubleshooting</li>
-                <li>Specific guidance when possible ("Please ensure MongoDB is running on port 27017")</li>
-            </ul>
+        <!-- ACCORDION 5: Meeting Course Outcomes -->
+        <div class="accordion-section">
+            <div class="accordion-header">
+                <div class="accordion-title">
+                    <h2>Meeting Course Outcomes</h2>
+                </div>
+                <span class="accordion-icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <p>This enhancement comprehensively addresses all five course outcomes:</p>
 
-            <h4>Performance Testing Feedback</h4>
-            <p>Testing with large datasets revealed that initial query implementations were slow. I addressed this by:</p>
-            <ul>
-                <li>Adding indexes on frequently queried fields</li>
-                <li>Optimizing queries to return only needed data</li>
-                <li>Implementing pagination for large result sets</li>
-                <li>Measuring query performance and iterating on improvements</li>
-            </ul>
+                <h3>Course Outcome 1: Collaborative Environments</h3>
+                <p>The modular architecture and clear API contracts support team collaboration. Different team members could work on the database layer, API layer, and front-end simultaneously without conflicts. The Git repository structure and comprehensive documentation facilitate code reviews and collaborative development.</p>
 
-            <h4>Design Review Feedback</h4>
-            <p>Feedback suggested that my repository interfaces were too specific to MongoDB. I generalized them to be database-agnostic:</p>
-            <ul>
-                <li>Removed MongoDB-specific types from interface signatures</li>
-                <li>Used generic collection types instead of MongoDB-specific classes</li>
-                <li>Designed interfaces that could support SQL or NoSQL implementations</li>
-            </ul>
-            <p>This refactoring improved the architecture's flexibility and demonstrated my ability to incorporate feedback to improve design quality.</p>
-        </section>
+                <h3>Course Outcome 2: Professional Communications</h3>
+                <p>The API documentation, database schema documentation, and setup guides demonstrate my ability to communicate technical information effectively. The code is self-documenting with clear naming conventions, and the README provides stakeholder-appropriate explanations of system capabilities.</p>
 
-        <section>
-            <h2>Meeting Course Outcomes</h2>
-            <p>This enhancement directly addresses multiple course outcomes:</p>
+                <h3>Course Outcome 3: Design and Evaluate Computing Solutions</h3>
+                <p>The database schema design, API architecture, and technology stack selection show my ability to design computing solutions. I evaluated trade-offs between SQL and NoSQL databases, chose appropriate frameworks (Spring Boot, React), and designed a system that solves real healthcare management needs.</p>
 
-            <h3>Course Outcome 4: Well-Founded Techniques and Tools</h3>
-            <p>The MongoDB integration demonstrates my ability to use professional database technologies effectively. I applied industry-standard practices including:</p>
-            <ul>
-                <li>Repository pattern for data access abstraction</li>
-                <li>Connection pooling for resource efficiency</li>
-                <li>Indexing for query optimization</li>
-                <li>BSON document design following NoSQL best practices</li>
-                <li>Proper error handling and logging</li>
-            </ul>
-            <p>These techniques are used in production systems worldwide, showing my readiness to work with professional-grade tools and deliver value through efficient data management.</p>
+                <h3>Course Outcome 4: Well-Founded Techniques and Tools</h3>
+                <p>By using industry-standard technologies (MongoDB, Spring Boot, React, JWT), I demonstrated proficiency with modern development tools. The implementation follows best practices for each technology, showing my ability to deliver professional-quality solutions using established techniques.</p>
 
-            <h3>Course Outcome 5: Security Mindset</h3>
-            <p>Database security was a primary consideration throughout this enhancement:</p>
-            <ul>
-                <li><strong>Input Validation:</strong> All data is validated before database insertion to prevent injection attacks and data corruption</li>
-                <li><strong>Connection Security:</strong> Connection strings support authentication and can be configured for SSL/TLS encryption</li>
-                <li><strong>Access Control:</strong> Database operations are abstracted through repositories, preventing direct database access from business logic</li>
-                <li><strong>Data Privacy:</strong> Healthcare data requires HIPAA compliance considerations; the architecture supports adding encryption at rest and in transit</li>
-                <li><strong>Error Handling:</strong> Database errors are caught and logged without exposing sensitive information to end users</li>
-            </ul>
-            <p>The security-conscious design demonstrates my ability to anticipate vulnerabilities and implement protective measures proactively.</p>
+                <h3>Course Outcome 5: Security Mindset</h3>
+                <p>The enhancement demonstrates strong security awareness through JWT authentication preventing unauthorized access, BCrypt password hashing protecting user credentials, input validation preventing injection attacks, CORS configuration preventing cross-origin vulnerabilities, and error handling that doesn't expose system internals.</p>
+            </div>
+        </div>
 
-            <h3>Course Outcome 3: Design Computing Solutions</h3>
-            <p>The database design reflects careful analysis of the problem domain and algorithmic thinking:</p>
-            <ul>
-                <li><strong>Query Optimization:</strong> Analyzed common operations and designed indexes to support them efficiently</li>
-                <li><strong>Trade-off Analysis:</strong> Chose NoSQL over SQL after evaluating flexibility vs. relational integrity trade-offs</li>
-                <li><strong>Scalability Design:</strong> Implemented architecture that scales horizontally to support growing data volumes</li>
-                <li><strong>Performance Considerations:</strong> Designed efficient queries that minimize data transfer and processing time</li>
-            </ul>
-            <p>These design decisions show my ability to evaluate computing solutions and manage trade-offs appropriately for the problem context.</p>
-
-            <h3>Course Outcome 2: Professional Communications</h3>
-            <p>Comprehensive documentation accompanies the database implementation:</p>
-            <ul>
-                <li>Javadoc for all repository methods explaining parameters, return values, and exceptions</li>
-                <li>Inline comments explaining complex query logic</li>
-                <li>README documentation with setup instructions for MongoDB</li>
-                <li>This detailed enhancement narrative explaining design decisions and challenges</li>
-            </ul>
-            <p>The documentation ensures that other developers can understand, maintain, and extend the database layer, which is critical for collaborative development.</p>
-        </section>
-
-        <section>
-            <h2>Database Architecture</h2>
-            
-            <h3>Collections Design</h3>
-            <p>The MongoDB implementation uses four primary collections:</p>
-
-            <h4>Doctors Collection</h4>
-            <pre><code>{
-  "_id": ObjectId,
-  "doctorId": String,
-  "firstName": String,
-  "lastName": String,
-  "specialty": String,
-  "phone": String,
-  "email": String
+        <!-- ACCORDION 6: Database Schema and Design -->
+        <div class="accordion-section">
+            <div class="accordion-header">
+                <div class="accordion-title">
+                    <h2>Database Schema and Design</h2>
+                </div>
+                <span class="accordion-icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <h3>Doctors Collection</h3>
+                <div class="info-box">
+                    <pre><code>{
+  _id: ObjectId,
+  name: String,
+  specialty: String,
+  address: String,
+  officeVisitFee: Number,
+  patientVisits: Number
 }</code></pre>
-            <ul>
-                <li><strong>Index:</strong> lastName, specialty (for common search operations)</li>
-                <li><strong>Purpose:</strong> Store physician information for appointment scheduling</li>
-            </ul>
+                </div>
 
-            <h4>Patients Collection</h4>
-            <pre><code>{
-  "_id": ObjectId,
-  "patientId": String,
-  "firstName": String,
-  "lastName": String,
-  "dateOfBirth": Date,
-  "phone": String,
-  "email": String,
-  "address": String
+                <h3>Patients Collection</h3>
+                <div class="info-box">
+                    <pre><code>{
+  _id: ObjectId,
+  name: String,
+  address: String,
+  primaryCarePhysician: String,
+  medicalRecordNumber: String
 }</code></pre>
-            <ul>
-                <li><strong>Index:</strong> lastName (for patient lookup)</li>
-                <li><strong>Purpose:</strong> Maintain patient demographic information</li>
-            </ul>
+                </div>
 
-            <h4>Appointments Collection</h4>
-            <pre><code>{
-  "_id": ObjectId,
-  "appointmentId": String,
-  "doctorId": String,
-  "patientId": String,
-  "appointmentDate": Date,
-  "startTime": Date,
-  "endTime": Date,
-  "reason": String,
-  "status": String
+                <h3>Appointments Collection</h3>
+                <div class="info-box">
+                    <pre><code>{
+  _id: ObjectId,
+  doctorId: String,
+  patientId: String,
+  appointmentDate: Date,
+  appointmentTime: String,
+  status: String,
+  priority: String
 }</code></pre>
-            <ul>
-                <li><strong>Index:</strong> doctorId + appointmentDate (for conflict detection)</li>
-                <li><strong>Index:</strong> patientId (for patient appointment history)</li>
-                <li><strong>Purpose:</strong> Track all scheduled appointments with timestamp precision</li>
-            </ul>
+                </div>
 
-            <h4>Employees Collection</h4>
-            <pre><code>{
-  "_id": ObjectId,
-  "employeeId": String,
-  "name": String,
-  "role": String,
-  "hourlyRate": Number,
-  "appointmentsCompleted": Number
+                <h3>Employees Collection</h3>
+                <div class="info-box">
+                    <pre><code>{
+  _id: ObjectId,
+  name: String,
+  role: String,
+  email: String,
+  hourlyRate: Number,
+  monthlyHours: Number
 }</code></pre>
-            <ul>
-                <li><strong>Index:</strong> employeeId (for payroll calculations)</li>
-                <li><strong>Purpose:</strong> Store staff information and track work for payroll</li>
-            </ul>
+                </div>
 
-            <h3>Repository Implementation</h3>
-            <p>Each collection has a dedicated repository class following a consistent pattern. The MongoDoctorRepository implements the DoctorRepository interface using the MongoDB Java driver, keeping database-specific code isolated from business logic.</p>
-        </section>
+                <h3>Indexing Strategy</h3>
+                <ul>
+                    <li><strong>Doctors:</strong> Index on specialty for filtered searches</li>
+                    <li><strong>Patients:</strong> Index on medicalRecordNumber for quick lookup</li>
+                    <li><strong>Appointments:</strong> Compound index on doctorId and appointmentDate for conflict detection</li>
+                    <li><strong>Employees:</strong> Index on email for authentication queries</li>
+                </ul>
+            </div>
+        </div>
 
-        <section>
-            <h2>Tools and Technologies Used</h2>
-            <ul>
-                <li><strong>MongoDB Community Server 8.0:</strong> NoSQL database engine</li>
-                <li><strong>MongoDB Java Driver 4.x:</strong> Official MongoDB client for Java applications</li>
-                <li><strong>Java 17:</strong> Programming language with modern features</li>
-                <li><strong>BSON:</strong> Binary JSON format for MongoDB documents</li>
-                <li><strong>Maven:</strong> Dependency management and build tool</li>
-                <li><strong>PowerShell:</strong> Command-line testing and MongoDB administration</li>
-                <li><strong>Eclipse IDE:</strong> Primary development environment</li>
-                <li><strong>Git/GitHub:</strong> Version control and repository hosting</li>
-            </ul>
-        </section>
+        <!-- ACCORDION 7: API Endpoints -->
+        <div class="accordion-section">
+            <div class="accordion-header">
+                <div class="accordion-title">
+                    <h2>REST API Endpoints</h2>
+                </div>
+                <span class="accordion-icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <h3>Doctor Endpoints</h3>
+                <ul>
+                    <li><code>GET /api/doctors</code> - Retrieve all doctors</li>
+                    <li><code>GET /api/doctors/{id}</code> - Get specific doctor</li>
+                    <li><code>POST /api/doctors</code> - Create new doctor</li>
+                    <li><code>PUT /api/doctors/{id}</code> - Update doctor information</li>
+                    <li><code>DELETE /api/doctors/{id}</code> - Remove doctor</li>
+                </ul>
 
-        <section>
-            <h2>Future Enhancements</h2>
-            
-            <h3>Email Confirmation System</h3>
-            <p>A critical next enhancement will be implementing automated email notifications for patient appointments. This feature will:</p>
-            <ul>
-                <li>Send confirmation emails immediately upon appointment creation with appointment details (date, time, doctor, location)</li>
-                <li>Include appointment ID and patient information for reference</li>
-                <li>Send reminder emails 24 hours before scheduled appointments to reduce no-shows</li>
-                <li>Allow patients to confirm, reschedule, or cancel appointments via email links</li>
-                <li>Store email delivery status in the appointments collection for tracking</li>
-                <li>Use JavaMail API or SendGrid integration with Spring Boot</li>
-                <li>Include professional HTML email templates with hospital branding</li>
-            </ul>
-            <p>This enhancement will significantly improve patient communication and reduce administrative overhead by automating a manual process currently handled by front desk staff.</p>
+                <h3>Patient Endpoints</h3>
+                <ul>
+                    <li><code>GET /api/patients</code> - Retrieve all patients</li>
+                    <li><code>GET /api/patients/{id}</code> - Get specific patient</li>
+                    <li><code>POST /api/patients</code> - Register new patient</li>
+                    <li><code>PUT /api/patients/{id}</code> - Update patient information</li>
+                    <li><code>DELETE /api/patients/{id}</code> - Remove patient record</li>
+                </ul>
 
-            <h3>Cloud Migration</h3>
-            <p>While the current implementation uses MongoDB locally (MongoDB Server 8.0) for development and demonstration purposes, the architecture is designed to easily migrate to MongoDB Atlas (cloud-hosted MongoDB) for production deployment. The transition would simply require updating the connection string in the MongoConnection class. Cloud deployment would provide:</p>
-            <ul>
-                <li>Automatic backups and disaster recovery</li>
-                <li>Geographic distribution for high availability</li>
-                <li>Managed scaling and performance optimization</li>
-                <li>Enhanced security features including encryption at rest and in transit</li>
-                <li>Built-in monitoring and alerting tools</li>
-            </ul>
-            <p>This demonstrates forward-thinking design that supports scalability from development to production environments.</p>
+                <h3>Appointment Endpoints</h3>
+                <ul>
+                    <li><code>GET /api/appointments</code> - Retrieve all appointments</li>
+                    <li><code>GET /api/appointments/doctor/{doctorId}</code> - Get doctor's appointments</li>
+                    <li><code>POST /api/appointments</code> - Schedule new appointment</li>
+                    <li><code>PUT /api/appointments/{id}</code> - Update appointment</li>
+                    <li><code>DELETE /api/appointments/{id}</code> - Cancel appointment</li>
+                </ul>
 
-            <h3>Additional Future Enhancements</h3>
-            <ul>
-                <li><strong>Advanced Queries:</strong> Aggregation pipelines for complex reporting, full-text search, geospatial queries, and time-series analysis</li>
-                <li><strong>Caching Layer:</strong> Add Redis for improved performance and reduced database load</li>
-                <li><strong>Data Analytics:</strong> Hospital utilization reports, doctor productivity metrics, patient demographic analysis</li>
-                <li><strong>Audit Logging:</strong> Track all data modifications for HIPAA compliance and security forensics</li>
-                <li><strong>Backup and Recovery:</strong> Automated daily backups with point-in-time recovery capabilities</li>
-            </ul>
-        </section>
+                <h3>Employee Endpoints</h3>
+                <ul>
+                    <li><code>GET /api/employees</code> - Retrieve all employees</li>
+                    <li><code>POST /api/employees</code> - Add new employee</li>
+                    <li><code>PUT /api/employees/{id}</code> - Update employee information</li>
+                </ul>
 
-        <section>
-            <h2>Conclusion</h2>
-            <p>Enhancement 3 represents a critical transformation of the Hospital Management System from a demonstration application to a production-ready system with persistent, scalable data storage. Through MongoDB integration, I demonstrated mastery of NoSQL database design, connection management, query optimization, and data integrity maintenance. These skills are essential in modern software development.</p>
+                <h3>Reports and Authentication</h3>
+                <ul>
+                    <li><code>GET /api/reports/payroll</code> - Generate payroll report</li>
+                    <li><code>POST /api/auth/login</code> - User authentication</li>
+                    <li><code>POST /api/auth/register</code> - User registration</li>
+                </ul>
+            </div>
+        </div>
 
-            <p>The challenges encountered and overcome during this enhancement strengthened my understanding of database systems, resource management, and the importance of proper error handling. The repository pattern implementation showcases professional architectural thinking, creating a flexible foundation that supports future enhancements without requiring fundamental restructuring.</p>
+        <!-- ACCORDION 8: Technologies Used -->
+        <div class="accordion-section">
+            <div class="accordion-header">
+                <div class="accordion-title">
+                    <h2>Tools and Technologies</h2>
+                </div>
+                <span class="accordion-icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <h3>Backend</h3>
+                <ul>
+                    <li><strong>Spring Boot 3.1:</strong> REST API framework</li>
+                    <li><strong>Spring Data MongoDB:</strong> Database integration layer</li>
+                    <li><strong>Spring Security:</strong> Authentication and authorization</li>
+                    <li><strong>JWT (JSON Web Tokens):</strong> Stateless authentication</li>
+                    <li><strong>BCrypt:</strong> Password hashing</li>
+                </ul>
 
-            <p>Most importantly, this enhancement demonstrates my ability to transform theoretical database knowledge into practical implementation that solves real-world problems. The Hospital Management System now maintains data reliably, queries efficiently, and scales appropriately. These qualities distinguish professional-grade applications from academic exercises. This work positions me to contribute effectively to professional development environments where robust data management is critical to application success.</p>
-        </section>
+                <h3>Database</h3>
+                <ul>
+                    <li><strong>MongoDB 6.0:</strong> NoSQL database</li>
+                    <li><strong>MongoDB Atlas:</strong> Cloud database hosting (optional)</li>
+                    <li><strong>MongoDB Compass:</strong> Database visualization tool</li>
+                </ul>
+
+                <h3>Frontend</h3>
+                <ul>
+                    <li><strong>React 18:</strong> UI framework</li>
+                    <li><strong>React Router:</strong> Client-side routing</li>
+                    <li><strong>Axios:</strong> HTTP client for API calls</li>
+                    <li><strong>Recharts:</strong> Data visualization library</li>
+                    <li><strong>CSS3:</strong> Styling and responsive design</li>
+                </ul>
+
+                <h3>Development Tools</h3>
+                <ul>
+                    <li><strong>Maven:</strong> Java dependency management</li>
+                    <li><strong>npm:</strong> JavaScript package management</li>
+                    <li><strong>Postman:</strong> API testing</li>
+                    <li><strong>Git/GitHub:</strong> Version control</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ACCORDION 9: Deployment Architecture -->
+        <div class="accordion-section">
+            <div class="accordion-header">
+                <div class="accordion-title">
+                    <h2>System Architecture</h2>
+                </div>
+                <span class="accordion-icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <h3>Three-Tier Architecture</h3>
+                <div class="info-box">
+                    <p><strong>Presentation Layer (React)</strong></p>
+                    <ul>
+                        <li>Runs on http://localhost:3000 (development)</li>
+                        <li>Handles user interface and user interactions</li>
+                        <li>Makes HTTP requests to API layer</li>
+                    </ul>
+
+                    <p><strong>Application Layer (Spring Boot)</strong></p>
+                    <ul>
+                        <li>Runs on http://localhost:8080</li>
+                        <li>Processes business logic</li>
+                        <li>Validates and sanitizes data</li>
+                        <li>Manages authentication and authorization</li>
+                    </ul>
+
+                    <p><strong>Data Layer (MongoDB)</strong></p>
+                    <ul>
+                        <li>Runs on default port 27017</li>
+                        <li>Persists all application data</li>
+                        <li>Supports aggregation queries and indexing</li>
+                    </ul>
+                </div>
+
+                <h3>Data Flow</h3>
+                <ol>
+                    <li>User interacts with React UI</li>
+                    <li>React sends HTTP request to Spring Boot API</li>
+                    <li>Spring Boot validates request and checks authentication</li>
+                    <li>Service layer processes business logic</li>
+                    <li>Repository layer queries MongoDB</li>
+                    <li>Data flows back through layers to React</li>
+                    <li>React updates UI with response data</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- ACCORDION 10: Conclusion -->
+        <div class="accordion-section">
+            <div class="accordion-header">
+                <div class="accordion-title">
+                    <h2>Conclusion</h2>
+                </div>
+                <span class="accordion-icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <p>Enhancement 3 represents the culmination of the capstone project, transforming the Hospital Management System into a complete, production-ready full-stack web application. By integrating MongoDB for persistent storage, building a robust REST API with Spring Boot, creating a professional React dashboard, and implementing JWT authentication, I demonstrated comprehensive full-stack development capabilities.</p>
+
+                <p>This enhancement showcases my ability to design and implement complex systems that integrate multiple technologies into cohesive solutions. The Hospital Management System is now a deployable application suitable for real-world use, demonstrating not just academic knowledge but practical software development skills applicable to professional environments.</p>
+
+                <p>Through the three enhancements, the artifact evolved from a basic console application into an enterprise-grade system with professional architecture, intelligent algorithms, persistent data storage, and a modern web interface. This progression demonstrates my growth as a computer science professional and my readiness to contribute to real-world software development projects.</p>
+            </div>
+        </div>
 
         <div style="margin-top: 3rem; text-align: center;">
             <a href="enhancement2.html" class="btn">← Previous: Algorithms</a>
             <a href="artifacts.html" class="btn">View Code Artifacts</a>
-            <a href="code-review.html" class="btn">Watch Code Review</a>
+            <a href="dashboard.html" class="btn">View Dashboard Screenshots</a>
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2025 Valerie Dawson | CS 499 Computer Science Capstone | Southern New Hampshire University</p>
+        <p>&copy; 2025 Valerie Dawson | Southern New Hampshire University</p>
     </footer>
+
+    <script src="js/accordion.js"></script>
 </body>
 </html>

@@ -9,9 +9,11 @@
 <body>
     <header>
         <div class="container">
-            <h1>Valerie Dawson</h1>
-            <p>Computer Science Capstone ePortfolio | CS 499</p>
-            <p>Southern New Hampshire University</p>
+            <div class="header-content">
+                <h1>Valerie Dawson</h1>
+                <p class="header-subtitle">Computer Science Graduate</p>
+                <p class="header-meta">Southern New Hampshire University</p>
+            </div>
         </div>
     </header>
 
@@ -30,88 +32,149 @@
     <main class="container">
         <h1>HospitalDash - System Overview</h1>
         
-        <h2>Visual Walkthrough</h2>
         <p>To help you understand the scope and functionality of the HospitalDash system, below are key screenshots showcasing the platform's features and architecture.</p>
 
-        <!-- Screenshot 1: Login -->
-        <div class="screenshot-container">
-            <h3>1. Login Page</h3>
-            <h4>Secure Login for Administrators and Staff</h4>
-            <img src="screenshots/login.png" alt="HospitalDash Login Page" class="screenshot">
-            <p>The authentication interface features a clean, user-friendly design with secure credential validation. Demo credentials are provided for testing purposes, ensuring easy access for reviewers while maintaining production-ready security protocols.</p>
+        <!-- ACCORDION 1: Login Page -->
+        <div class="accordion-section">
+            <div class="accordion-header">
+                <div class="accordion-title">
+                    <h2>Login Page</h2>
+                </div>
+                <span class="accordion-icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <h3>Secure Login for Administrators and Staff</h3>
+                <img src="screenshots/login.png" alt="HospitalDash Login Page" class="screenshot">
+                <p>The authentication interface features a clean, user-friendly design with secure credential validation. Demo credentials are provided for testing purposes, ensuring easy access for reviewers while maintaining production-ready security protocols.</p>
+            </div>
         </div>
 
-        <!-- Screenshot 2: Dashboard -->
-        <div class="screenshot-container">
-            <h3>2. Dashboard Overview</h3>
-            <h4>Comprehensive Admin Dashboard for Real-Time Data Management</h4>
-            <img src="screenshots/dashboard.png" alt="HospitalDash Dashboard Overview" class="screenshot">
-            <p>The main administrative panel displays critical metrics at a glance, including total patients, scheduled appointments, active doctors, and employee counts. The "Recent Activity" section provides real-time updates on patient appointments, while "Quick Stats" offer detailed insights into appointments, active doctors, and patient records.</p>
+        <!-- ACCORDION 2: Dashboard Overview -->
+        <div class="accordion-section">
+            <div class="accordion-header">
+                <div class="accordion-title">
+                    <h2>Dashboard Overview</h2>
+                </div>
+                <span class="accordion-icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <h3>Comprehensive Admin Dashboard for Real-Time Data Management</h3>
+                <img src="screenshots/dashboard.png" alt="HospitalDash Dashboard Overview" class="screenshot">
+                <p>The main administrative panel displays critical metrics at a glance, including total patients, scheduled appointments, active doctors, and employee counts. The "Recent Activity" section provides real-time updates on patient appointments, while "Quick Stats" offer detailed insights into appointments, active doctors, and patient records.</p>
+            </div>
         </div>
 
-        <!-- Screenshot 3: Patient Management -->
-        <div class="screenshot-container">
-            <h3>3. Patient Management Page</h3>
-            <h4>Dynamic Patient Management with MongoDB Integration</h4>
-            <img src="screenshots/patients.png" alt="Patient Management Interface" class="screenshot">
-            <p>This interface demonstrates full CRUD (Create, Read, Update, Delete) operations for patient records. Users can add new patients with comprehensive details including name, address, and primary care physician. The data table provides an organized view of all patient information with quick-access edit and delete functions.</p>
+        <!-- ACCORDION 3: Patient Management -->
+        <div class="accordion-section">
+            <div class="accordion-header">
+                <div class="accordion-title">
+                    <h2>Patient Management Page</h2>
+                </div>
+                <span class="accordion-icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <h3>Dynamic Patient Management with MongoDB Integration</h3>
+                <img src="screenshots/patients.png" alt="Patient Management Interface" class="screenshot">
+                <p>This interface demonstrates full CRUD (Create, Read, Update, Delete) operations for patient records. Users can add new patients with comprehensive details including name, address, and primary care physician. The data table provides an organized view of all patient information with quick-access edit and delete functions.</p>
+            </div>
         </div>
 
-        <!-- Screenshot 4: Employee Management -->
-        <div class="screenshot-container">
-            <h3>4. Employee Management</h3>
-            <h4>Streamlined Employee Management System</h4>
-            <img src="screenshots/employees.png" alt="Employee Management System" class="screenshot">
-            <p>The employee management module allows administrators to track staff details including roles, contact information, hourly rates, and monthly working hours. This integrated approach ensures efficient workforce management and payroll calculation.</p>
+        <!-- ACCORDION 4: Employee Management -->
+        <div class="accordion-section">
+            <div class="accordion-header">
+                <div class="accordion-title">
+                    <h2>Employee Management</h2>
+                </div>
+                <span class="accordion-icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <h3>Streamlined Employee Management System</h3>
+                <img src="screenshots/employees.png" alt="Employee Management System" class="screenshot">
+                <p>The employee management module allows administrators to track staff details including roles, contact information, hourly rates, and monthly working hours. This integrated approach ensures efficient workforce management and payroll calculation.</p>
+            </div>
         </div>
 
-        <!-- Screenshot 5: Appointments -->
-        <div class="screenshot-container">
-            <h3>5. Appointment Scheduling</h3>
-            <h4>Streamlined Appointment Scheduling Interface</h4>
-            <img src="screenshots/appointments.png" alt="Appointment Scheduling Interface" class="screenshot">
-            <p>The appointment scheduling system features an intuitive calendar interface for selecting dates and times. Administrators can assign doctors to patients, track appointment statuses (Scheduled, Completed), and manage the entire scheduling workflow from a single, organized interface.</p>
+        <!-- ACCORDION 5: Appointments -->
+        <div class="accordion-section">
+            <div class="accordion-header">
+                <div class="accordion-title">
+                    <h2>Appointment Scheduling</h2>
+                </div>
+                <span class="accordion-icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <h3>Streamlined Appointment Scheduling Interface</h3>
+                <img src="screenshots/appointments.png" alt="Appointment Scheduling Interface" class="screenshot">
+                <p>The appointment scheduling system features an intuitive calendar interface for selecting dates and times. Administrators can assign doctors to patients, track appointment statuses (Scheduled, Completed), and manage the entire scheduling workflow from a single, organized interface.</p>
+            </div>
         </div>
 
-        <!-- Screenshot 6: Reports -->
-        <div class="screenshot-container">
-            <h3>6. Reports & Payroll</h3>
-            <h4>Financial Analytics and Payroll Processing</h4>
-            <img src="screenshots/reports.png" alt="Reports and Payroll Dashboard" class="screenshot">
-            <p>The reports module provides comprehensive financial insights, including total payroll calculations, doctor-specific earnings based on patient visits, and employee compensation tracking. Detailed breakdowns show specialty-wise performance and hour-based employee earnings.</p>
+        <!-- ACCORDION 6: Reports -->
+        <div class="accordion-section">
+            <div class="accordion-header">
+                <div class="accordion-title">
+                    <h2>Reports & Payroll</h2>
+                </div>
+                <span class="accordion-icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <h3>Financial Analytics and Payroll Processing</h3>
+                <img src="screenshots/reports.png" alt="Reports and Payroll Dashboard" class="screenshot">
+                <p>The reports module provides comprehensive financial insights, including total payroll calculations, doctor-specific earnings based on patient visits, and employee compensation tracking. Detailed breakdowns show specialty-wise performance and hour-based employee earnings.</p>
+            </div>
         </div>
 
-        <!-- Screenshot 7: Doctors Management -->
-        <div class="screenshot-container">
-            <h3>7. Doctors Management</h3>
-            <h4>Medical Staff Administration Portal</h4>
-            <img src="screenshots/doctors.png" alt="Doctors Management Portal" class="screenshot">
-            <p>This section enables complete management of medical staff, including specialty assignment, address tracking, office visit fee configuration, and patient visit monitoring. The system maintains detailed records of each doctor's performance metrics.</p>
+        <!-- ACCORDION 7: Doctors Management -->
+        <div class="accordion-section">
+            <div class="accordion-header">
+                <div class="accordion-title">
+                    <h2>Doctors Management</h2>
+                </div>
+                <span class="accordion-icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <h3>Medical Staff Administration Portal</h3>
+                <img src="screenshots/doctors.png" alt="Doctors Management Portal" class="screenshot">
+                <p>This section enables complete management of medical staff, including specialty assignment, address tracking, office visit fee configuration, and patient visit monitoring. The system maintains detailed records of each doctor's performance metrics.</p>
+            </div>
         </div>
 
-        <!-- Key Features -->
-        <div class="key-features">
-            <h2>Key Features Demonstrated</h2>
-            <ul class="features-list">
-                <li><strong>Full-Stack Development</strong> - Complete integration from UI to database</li>
-                <li><strong>RESTful API Design</strong> - Custom endpoints for all CRUD operations</li>
-                <li><strong>Responsive Design</strong> - Mobile-friendly, modern UI/UX</li>
-                <li><strong>Real-Time Data</strong> - Live updates and dynamic content rendering</li>
-                <li><strong>Secure Authentication</strong> - Role-based access control</li>
-                <li><strong>Cloud Deployment</strong> - Production-ready AWS infrastructure</li>
-                <li> <strong>Database Management</strong> - Efficient NoSQL data modeling with MongoDB</li>
-            </ul>
+        <!-- ACCORDION 8: Key Features -->
+        <div class="accordion-section">
+            <div class="accordion-header">
+                <div class="accordion-title">
+                    <h2>Key Features Demonstrated</h2>
+                </div>
+                <span class="accordion-icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <ul class="features-list">
+                    <li><strong>Full-Stack Development</strong> - Complete integration from UI to database</li>
+                    <li><strong>RESTful API Design</strong> - Custom endpoints for all CRUD operations</li>
+                    <li><strong>Responsive Design</strong> - Mobile-friendly, modern UI/UX</li>
+                    <li><strong>Real-Time Data</strong> - Live updates and dynamic content rendering</li>
+                    <li><strong>Secure Authentication</strong> - Role-based access control</li>
+                    <li><strong>Cloud Deployment</strong> - Production-ready AWS infrastructure</li>
+                    <li><strong>Database Management</strong> - Efficient NoSQL data modeling with MongoDB</li>
+                </ul>
+            </div>
         </div>
 
-        <!-- API Testing -->
-        <div class="api-section">
-            <h2>API Testing Preview</h2>
-            <h3>Custom REST APIs Built in Spring Boot for Data Flow Control</h3>
-            
-            <p>Example API endpoints tested via Postman:</p>
-            
-            <div class="api-endpoints">
-                <pre><code>GET    /api/patients          - Retrieve all patients
+        <!-- ACCORDION 9: API Testing -->
+        <div class="accordion-section">
+            <div class="accordion-header">
+                <div class="accordion-title">
+                    <h2>API Testing Preview</h2>
+                </div>
+                <span class="accordion-icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <h3>Custom REST APIs Built in Spring Boot for Data Flow Control</h3>
+                
+                <p>Example API endpoints tested via Postman:</p>
+                
+                <div class="api-endpoints">
+                    <pre><code>GET    /api/patients          - Retrieve all patients
 POST   /api/patients          - Create new patient
 PUT    /api/patients/{id}     - Update patient information
 DELETE /api/patients/{id}     - Delete patient record
@@ -122,9 +185,10 @@ GET    /api/doctors           - Retrieve all doctors
 POST   /api/doctors           - Add new doctor
 
 GET    /api/reports/payroll   - Generate payroll reports</code></pre>
+                </div>
+                
+                <p>All endpoints return standardized JSON responses with proper HTTP status codes and error handling.</p>
             </div>
-            
-            <p>All endpoints return standardized JSON responses with proper HTTP status codes and error handling.</p>
         </div>
 
         <div style="margin-top: 3rem; text-align: center;">
@@ -135,7 +199,9 @@ GET    /api/reports/payroll   - Generate payroll reports</code></pre>
     </main>
 
     <footer>
-        <p>&copy; 2025 Valerie Dawson | CS 499 Computer Science Capstone | Southern New Hampshire University</p>
+        <p>&copy; 2025 Valerie Dawson | Southern New Hampshire University</p>
     </footer>
+
+    <script src="js/accordion.js"></script>
 </body>
 </html>

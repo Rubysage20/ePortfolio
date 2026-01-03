@@ -9,9 +9,11 @@
 <body>
     <header>
         <div class="container">
-            <h1>Valerie Dawson</h1>
-            <p>Computer Science Capstone ePortfolio | CS 499</p>
-            <p>Southern New Hampshire University</p>
+            <div class="header-content">
+                <h1>Valerie Dawson</h1>
+                <p class="header-subtitle">Computer Science Graduate</p>
+                <p class="header-meta">Southern New Hampshire University</p>
+            </div>
         </div>
     </header>
 
@@ -30,220 +32,290 @@
     <main class="container">
         <h1>Enhancement 2: Algorithms and Data Structures</h1>
         
-        <section>
-            <h2>Artifact Description</h2>
-            <p>For Enhancement 2, I continued work on the Hospital Management System, focusing specifically on the appointment scheduling functionality and data processing efficiency. The original artifact had basic scheduling capabilities but lacked intelligent conflict detection, priority handling, and efficient data retrieval mechanisms. This enhancement builds upon the architectural improvements from Enhancement 1 to implement sophisticated algorithms and optimized data structures.</p>
-
-            <p>The artifact was created during my Information Technology program and has evolved through multiple enhancement cycles. This particular enhancement focuses on the algorithmic complexity and data structure design that enable the system to handle real-world healthcare scheduling challenges efficiently.</p>
-        </section>
-
-        <section>
-            <h2>Justification for Inclusion</h2>
-            <p>I selected this artifact for Enhancement 2 because appointment scheduling presents complex algorithmic challenges that allowed me to demonstrate advanced problem-solving skills and data structure optimization. The healthcare domain requires precision, efficiency, and scalability. These qualities make this artifact an excellent showcase for algorithmic thinking.</p>
-
-            <h3>Algorithmic Problem-Solving</h3>
-            <p>Healthcare scheduling involves multiple constraints: doctor availability, appointment conflicts, patient preferences, and urgency levels. Implementing an intelligent scheduling system required designing algorithms that could handle these competing priorities while maintaining O(n log n) or better time complexity.</p>
-
-            <h3>Data Structure Optimization</h3>
-            <p>I enhanced the system by implementing:</p>
-            <ul>
-                <li><strong>Priority Queues</strong> for managing urgent appointments and ensuring critical cases are scheduled first</li>
-                <li><strong>Hash Maps</strong> for O(1) lookup time when retrieving doctor and patient records</li>
-                <li><strong>Sorted Collections</strong> for organizing appointments chronologically and generating time-based reports</li>
-                <li><strong>Interval Trees</strong> (conceptually) for efficient overlap detection in appointment scheduling</li>
-            </ul>
-
-            <h3>Conflict Detection Algorithm</h3>
-            <p>The core enhancement was developing a robust conflict detection system that prevents double-booking. The algorithm:</p>
-            <ol>
-                <li>Normalizes all appointment times to consistent intervals</li>
-                <li>Sorts existing appointments by start time</li>
-                <li>Uses binary search principles to quickly identify potential conflicts</li>
-                <li>Validates new appointments against existing schedules in O(log n) time</li>
-            </ol>
-
-            <h3>Performance Improvements</h3>
-            <p>These algorithmic enhancements reduced scheduling operation time from O(n²) in the original linear search approach to O(n log n) with sorted data structures, making the system scalable for hospitals with hundreds of daily appointments.</p>
-
-            <h3>Real-World Applicability</h3>
-            <p>The scheduling algorithms mirror those used in production healthcare systems, demonstrating my ability to solve practical problems with computer science principles and industry-standard approaches.</p>
-
-            <p>The enhancement improved the artifact by transforming basic appointment creation into an intelligent, conflict-aware scheduling system that prioritizes urgent cases, prevents scheduling errors, and operates efficiently at scale.</p>
-        </section>
-
-        <section>
-            <h2>Skills Demonstrated</h2>
-            <p>Through this enhancement, I demonstrated proficiency in:</p>
-            <ul>
-                <li><strong>Algorithm Design:</strong> Creating efficient solutions to complex scheduling problems</li>
-                <li><strong>Time Complexity Analysis:</strong> Understanding and optimizing Big O performance</li>
-                <li><strong>Data Structure Selection:</strong> Choosing appropriate structures for specific use cases</li>
-                <li><strong>Search Algorithms:</strong> Implementing binary search, hash-based lookup, and interval scanning</li>
-                <li><strong>Sorting Algorithms:</strong> Applying comparison-based sorting for appointment organization</li>
-                <li><strong>Problem Decomposition:</strong> Breaking complex scheduling logic into manageable components</li>
-                <li><strong>Edge Case Handling:</strong> Addressing boundary conditions in time-based comparisons</li>
-                <li><strong>Performance Optimization:</strong> Reducing computational overhead through smart data structure choices</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Reflection on the Enhancement Process</h2>
-            
-            <h3>Learning and Growth</h3>
-            <p>Implementing the appointment scheduling algorithm deepened my understanding of how theoretical computer science concepts apply to real-world problems. Prior to this enhancement, my knowledge of data structures was primarily academic. Through this project, I learned how different data structures directly impact application performance and user experience.</p>
-
-            <p>One significant insight was understanding the trade-offs between different approaches. Initially, I considered using a tree-based structure for appointment storage, which would provide excellent search performance. However, I realized that for a hospital's typical daily volume (50-200 appointments), a sorted list with binary search offered similar performance with simpler implementation and lower memory overhead. This taught me that "optimal" solutions must consider practical constraints, not just theoretical efficiency.</p>
-
-            <p>I also gained deeper appreciation for the importance of time normalization and consistent date handling. Healthcare scheduling requires precision. Appointments must account for time zones, daylight saving changes, and exact minute-level accuracy. Implementing the LocalDateTime library properly and creating normalization functions taught me how critical attention to detail is in algorithmic implementation.</p>
-
-            <h3>Challenges Encountered</h3>
-            
-            <h4>Challenge 1: Appointment Conflict Detection</h4>
-            <p>The most significant challenge was correctly implementing conflict detection for overlapping appointments. My initial algorithm had a logical flaw: it allowed appointments that shared exact start or end times, which could cause issues if procedures ran long or required setup time.</p>
-
-            <p><strong>Solution:</strong> I refined the comparison logic to use strict inequalities:</p>
-            <div class="info-box">
-                <p>Conflict exists if: (newStart &lt; existingEnd) AND (newEnd &gt; existingStart)</p>
+        <!-- ACCORDION 1: Artifact Description -->
+        <div class="accordion-section">
+            <div class="accordion-header">
+                <div class="accordion-title">
+                    <h2>Artifact Description</h2>
+                </div>
+                <span class="accordion-icon">▼</span>
             </div>
+            <div class="accordion-content">
+                <p>For Enhancement 2, I continued work on the Hospital Management System, focusing specifically on the appointment scheduling functionality and data processing efficiency. The original artifact had basic scheduling capabilities but lacked intelligent conflict detection, priority handling, and efficient data retrieval mechanisms. This enhancement builds upon the architectural improvements from Enhancement 1 to implement sophisticated algorithms and optimized data structures.</p>
 
-            <p>This correctly identifies overlaps, adjacent appointments, and completely overlapping intervals. I validated this logic through extensive unit testing with edge cases:</p>
-            <ul>
-                <li>Back-to-back appointments (should succeed)</li>
-                <li>Partial overlaps (should fail)</li>
-                <li>Complete enclosure (should fail)</li>
-                <li>Identical time slots (should fail)</li>
-            </ul>
+                <p>The artifact was created during my Information Technology program and has evolved through multiple enhancement cycles. This particular enhancement focuses on the algorithmic complexity and data structure design that enable the system to handle real-world healthcare scheduling challenges efficiently.</p>
+            </div>
+        </div>
 
-            <h4>Challenge 2: Priority Queue Implementation</h4>
-            <p>Implementing priority-based scheduling required balancing urgency levels with chronological ordering. Urgent appointments needed priority, but we couldn't simply always schedule them first without causing inefficiencies.</p>
+        <!-- ACCORDION 2: Justification for Inclusion -->
+        <div class="accordion-section">
+            <div class="accordion-header">
+                <div class="accordion-title">
+                    <h2>Justification for Inclusion</h2>
+                </div>
+                <span class="accordion-icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <p>I selected this artifact for Enhancement 2 because appointment scheduling presents complex algorithmic challenges that allowed me to demonstrate advanced problem-solving skills and data structure optimization. The healthcare domain requires precision, efficiency, and scalability. These qualities make this artifact an excellent showcase for algorithmic thinking.</p>
 
-            <p><strong>Solution:</strong> I implemented a composite priority system:</p>
-            <ol>
-                <li>Primary sort by urgency level (Emergency &gt; Urgent &gt; Routine)</li>
-                <li>Secondary sort by requested date/time</li>
-                <li>Tertiary sort by patient wait time</li>
-            </ol>
-            <p>This multi-level priority system ensures urgent cases are handled promptly while maintaining reasonable scheduling for routine appointments.</p>
+                <h3>Algorithmic Problem-Solving</h3>
+                <p>Healthcare scheduling involves multiple constraints: doctor availability, appointment conflicts, patient preferences, and urgency levels. Implementing an intelligent scheduling system required designing algorithms that could handle these competing priorities while maintaining O(n log n) or better time complexity.</p>
 
-            <h4>Challenge 3: Performance Testing and Optimization</h4>
-            <p>Testing algorithmic performance with small datasets doesn't reveal scalability issues. I needed to validate that my algorithms would perform well with realistic data volumes.</p>
+                <h3>Data Structure Optimization</h3>
+                <p>I enhanced the system by implementing:</p>
+                <ul>
+                    <li><strong>Priority Queues</strong> for managing urgent appointments and ensuring critical cases are scheduled first</li>
+                    <li><strong>Hash Maps</strong> for O(1) lookup time when retrieving doctor and patient records</li>
+                    <li><strong>Sorted Collections</strong> for organizing appointments chronologically and generating time-based reports</li>
+                    <li><strong>Interval Trees</strong> (conceptually) for efficient overlap detection in appointment scheduling</li>
+                </ul>
 
-            <p><strong>Solution:</strong> I created a test suite that generated thousands of randomized appointments and measured execution time for:</p>
-            <ul>
-                <li>Conflict detection across various appointment densities</li>
-                <li>Search operations for specific doctors or time slots</li>
-                <li>Report generation with sorting and filtering</li>
-            </ul>
-            <p>The results confirmed O(n log n) performance for scheduling operations and O(log n) for search operations, validating my design choices.</p>
-
-            <h4>Challenge 4: Data Consistency During Concurrent Operations</h4>
-            <p>While implementing scheduling logic, I realized that concurrent appointment requests could create race conditions where two appointments are scheduled for the same slot simultaneously.</p>
-
-            <p><strong>Solution:</strong> Although full multi-threading support wasn't implemented in this milestone, I designed the scheduling algorithm to be thread-safe by:</p>
-            <ul>
-                <li>Using atomic check-and-schedule operations</li>
-                <li>Designing repository methods to support transactional behavior</li>
-                <li>Documenting concurrency considerations for future implementation</li>
-            </ul>
-
-            <h3>Incorporation of Feedback</h3>
-            <p>Early code reviews revealed that my initial scheduling algorithm was difficult to understand and test due to complex nested conditionals. I addressed this feedback by:</p>
-            <ol>
-                <li><strong>Refactoring into smaller methods:</strong> Breaking the scheduling logic into distinct functions for validation, conflict checking, and insertion</li>
-                <li><strong>Adding comprehensive comments:</strong> Explaining the reasoning behind each step of the algorithm</li>
-                <li><strong>Creating helper methods:</strong> Extracting time comparison logic into reusable utility functions</li>
-                <li><strong>Improving variable naming:</strong> Using descriptive names like <code>potentialConflict</code> instead of <code>temp</code></li>
-            </ol>
-            <p>This refactoring made the code more maintainable and easier for other developers to understand and modify.</p>
-        </section>
-
-        <section>
-            <h2>Meeting Course Outcomes</h2>
-            <p>This enhancement directly addresses the following course outcomes:</p>
-
-            <h3>Course Outcome 3: Design and Evaluate Computing Solutions</h3>
-            <p>The appointment scheduling enhancement demonstrates my ability to design computing solutions using algorithmic principles. I evaluated trade-offs between different data structures (lists vs. trees vs. hash maps), analyzed time complexity, and chose solutions appropriate for the problem scale. The conflict detection algorithm shows clear application of computer science practices to solve a real-world problem.</p>
-
-            <h3>Course Outcome 4: Well-Founded Techniques and Tools</h3>
-            <p>By implementing standard algorithms (binary search, merge sort concepts, priority queuing) and using appropriate data structures (HashMap, PriorityQueue, TreeSet), I demonstrated proficiency with industry-standard tools. The performance optimization shows my ability to implement solutions that deliver value by reducing computational overhead and improving user experience.</p>
-
-            <h3>Course Outcome 5: Security Mindset</h3>
-            <p>The validation logic in the scheduling algorithm prevents invalid data entry that could compromise system integrity. By checking for null references, validating time ranges, and ensuring appointments meet logical constraints (end time &gt; start time, future dates only), I mitigated potential vulnerabilities. The conflict detection also prevents data inconsistencies that could affect patient care.</p>
-
-            <h3>Course Outcome 2: Professional Communications</h3>
-            <p>The comprehensive documentation of algorithmic logic, time complexity analysis, and design decisions demonstrates my ability to communicate technical concepts clearly. Code comments explain not just what the algorithm does, but why certain approaches were chosen.</p>
-        </section>
-
-        <section>
-            <h2>Algorithms and Data Structures Implemented</h2>
-            
-            <h3>Priority Queue for Urgent Appointments</h3>
-            <ul>
-                <li><strong>Purpose:</strong> Ensure emergency and urgent cases are scheduled before routine appointments</li>
-                <li><strong>Time Complexity:</strong> O(log n) for insertion and removal</li>
-                <li><strong>Benefits:</strong> Automatic priority-based ordering</li>
-            </ul>
-
-            <h3>HashMap for Record Lookup</h3>
-            <ul>
-                <li><strong>Purpose:</strong> Fast retrieval of doctor and patient records by ID</li>
-                <li><strong>Time Complexity:</strong> O(1) average case for lookup</li>
-                <li><strong>Benefits:</strong> Eliminates linear search through all records</li>
-            </ul>
-
-            <h3>Sorted Lists for Chronological Ordering</h3>
-            <ul>
-                <li><strong>Purpose:</strong> Maintain appointments in time order for conflict detection and reporting</li>
-                <li><strong>Time Complexity:</strong> O(n log n) for sorting, O(log n) for binary search</li>
-                <li><strong>Benefits:</strong> Efficient range queries and interval overlap detection</li>
-            </ul>
-
-            <h3>Conflict Detection Algorithm</h3>
-            <div class="info-box">
-                <p><strong>For each new appointment:</strong></p>
+                <h3>Conflict Detection Algorithm</h3>
+                <p>The core enhancement was developing a robust conflict detection system that prevents double-booking. The algorithm:</p>
                 <ol>
-                    <li>Retrieve doctor's existing appointments (O(1) using HashMap)</li>
-                    <li>Binary search for potential conflicts (O(log n))</li>
-                    <li>Check interval overlaps using time comparison (O(1))</li>
-                    <li>Accept or reject based on result</li>
+                    <li>Normalizes all appointment times to consistent intervals</li>
+                    <li>Sorts existing appointments by start time</li>
+                    <li>Uses binary search principles to quickly identify potential conflicts</li>
+                    <li>Validates new appointments against existing schedules in O(log n) time</li>
                 </ol>
-                <p><strong>Total: O(log n) per appointment</strong></p>
+
+                <h3>Performance Improvements</h3>
+                <p>These algorithmic enhancements reduced scheduling operation time from O(n²) in the original linear search approach to O(n log n) with sorted data structures, making the system scalable for hospitals with hundreds of daily appointments.</p>
+
+                <h3>Real-World Applicability</h3>
+                <p>The scheduling algorithms mirror those used in production healthcare systems, demonstrating my ability to solve practical problems with computer science principles and industry-standard approaches.</p>
+
+                <p>The enhancement improved the artifact by transforming basic appointment creation into an intelligent, conflict-aware scheduling system that prioritizes urgent cases, prevents scheduling errors, and operates efficiently at scale.</p>
             </div>
+        </div>
 
-            <h3>Time Normalization Functions</h3>
-            <ul>
-                <li>Standardize all time inputs to consistent format</li>
-                <li>Handle edge cases (midnight boundaries, timezone considerations)</li>
-                <li>Enable reliable time-based comparisons</li>
-            </ul>
-        </section>
+        <!-- ACCORDION 3: Skills Demonstrated -->
+        <div class="accordion-section">
+            <div class="accordion-header">
+                <div class="accordion-title">
+                    <h2>Skills Demonstrated</h2>
+                </div>
+                <span class="accordion-icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <p>Through this enhancement, I demonstrated proficiency in:</p>
+                <ul>
+                    <li><strong>Algorithm Design:</strong> Creating efficient solutions to complex scheduling problems</li>
+                    <li><strong>Time Complexity Analysis:</strong> Understanding and optimizing Big O performance</li>
+                    <li><strong>Data Structure Selection:</strong> Choosing appropriate structures for specific use cases</li>
+                    <li><strong>Search Algorithms:</strong> Implementing binary search, hash-based lookup, and interval scanning</li>
+                    <li><strong>Sorting Algorithms:</strong> Applying comparison-based sorting for appointment organization</li>
+                    <li><strong>Problem Decomposition:</strong> Breaking complex scheduling logic into manageable components</li>
+                    <li><strong>Edge Case Handling:</strong> Addressing boundary conditions in time-based comparisons</li>
+                    <li><strong>Performance Optimization:</strong> Reducing computational overhead through smart data structure choices</li>
+                </ul>
+            </div>
+        </div>
 
-        <section>
-            <h2>Tools and Technologies Used</h2>
-            <ul>
-                <li><strong>Java Collections Framework:</strong> HashMap, TreeSet, PriorityQueue</li>
-                <li><strong>Java Time API:</strong> LocalDateTime, Duration, Period</li>
-                <li><strong>Algorithm Analysis:</strong> Big O notation, time complexity evaluation</li>
-                <li><strong>Testing Framework:</strong> JUnit for unit testing algorithmic correctness</li>
-                <li><strong>Profiling Tools:</strong> Used to measure and validate performance claims</li>
-            </ul>
-        </section>
+        <!-- ACCORDION 4: Reflection on Enhancement Process -->
+        <div class="accordion-section">
+            <div class="accordion-header">
+                <div class="accordion-title">
+                    <h2>Reflection on the Enhancement Process</h2>
+                </div>
+                <span class="accordion-icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <h3>Learning and Growth</h3>
+                <p>Implementing the appointment scheduling algorithm deepened my understanding of how theoretical computer science concepts apply to real-world problems. Prior to this enhancement, my knowledge of data structures was primarily academic. Through this project, I learned how different data structures directly impact application performance and user experience.</p>
 
-        <section>
-            <h2>Next Steps</h2>
-            <p>The algorithmic improvements in this enhancement enable several future enhancements:</p>
-            <ol>
-                <li><strong>Machine Learning Integration:</strong> Use historical scheduling data to predict appointment durations and optimize scheduling</li>
-                <li><strong>Advanced Reporting:</strong> Generate analytics on scheduling patterns, doctor utilization, and patient wait times</li>
-                <li><strong>Recommendation Engine:</strong> Suggest optimal appointment times based on multiple factors</li>
-                <li><strong>Resource Optimization:</strong> Extend algorithms to schedule rooms, equipment, and staff beyond just doctors</li>
-            </ol>
-        </section>
+                <p>One significant insight was understanding the trade-offs between different approaches. Initially, I considered using a tree-based structure for appointment storage, which would provide excellent search performance. However, I realized that for a hospital's typical daily volume (50-200 appointments), a sorted list with binary search offered similar performance with simpler implementation and lower memory overhead. This taught me that "optimal" solutions must consider practical constraints, not just theoretical efficiency.</p>
 
-        <section>
-            <h2>Conclusion</h2>
-            <p>Enhancement 2 transformed the Hospital Management System's scheduling capabilities from basic appointment creation to an intelligent, efficient, and scalable scheduling engine. By applying advanced algorithms and carefully selected data structures, I demonstrated my ability to solve complex problems with computer science principles. The performance optimizations, conflict detection logic, and priority-based scheduling reflect industry-standard approaches to healthcare system design. This enhancement showcases my growth in algorithmic thinking and my ability to evaluate and implement efficient solutions to real-world computational challenges.</p>
-        </section>
+                <p>I also gained deeper appreciation for the importance of time normalization and consistent date handling. Healthcare scheduling requires precision. Appointments must account for time zones, daylight saving changes, and exact minute-level accuracy. Implementing the LocalDateTime library properly and creating normalization functions taught me how critical attention to detail is in algorithmic implementation.</p>
+
+                <h3>Challenges Encountered</h3>
+                
+                <h4>Challenge 1: Appointment Conflict Detection</h4>
+                <p>The most significant challenge was correctly implementing conflict detection for overlapping appointments. My initial algorithm had a logical flaw: it allowed appointments that shared exact start or end times, which could cause issues if procedures ran long or required setup time.</p>
+
+                <p><strong>Solution:</strong> I refined the comparison logic to use strict inequalities:</p>
+                <div class="info-box">
+                    <p>Conflict exists if: (newStart &lt; existingEnd) AND (newEnd &gt; existingStart)</p>
+                </div>
+
+                <p>This correctly identifies overlaps, adjacent appointments, and completely overlapping intervals. I validated this logic through extensive unit testing with edge cases:</p>
+                <ul>
+                    <li>Back-to-back appointments (should succeed)</li>
+                    <li>Partial overlaps (should fail)</li>
+                    <li>Complete enclosure (should fail)</li>
+                    <li>Identical time slots (should fail)</li>
+                </ul>
+
+                <h4>Challenge 2: Priority Queue Implementation</h4>
+                <p>Implementing priority-based scheduling required balancing urgency levels with chronological ordering. Urgent appointments needed priority, but we couldn't simply always schedule them first without causing inefficiencies.</p>
+
+                <p><strong>Solution:</strong> I implemented a composite priority system:</p>
+                <ol>
+                    <li>Primary sort by urgency level (Emergency &gt; Urgent &gt; Routine)</li>
+                    <li>Secondary sort by requested date/time</li>
+                    <li>Tertiary sort by patient wait time</li>
+                </ol>
+                <p>This multi-level priority system ensures urgent cases are handled promptly while maintaining reasonable scheduling for routine appointments.</p>
+
+                <h4>Challenge 3: Performance Testing and Optimization</h4>
+                <p>Testing algorithmic performance with small datasets doesn't reveal scalability issues. I needed to validate that my algorithms would perform well with realistic data volumes.</p>
+
+                <p><strong>Solution:</strong> I created a test suite that generated thousands of randomized appointments and measured execution time for:</p>
+                <ul>
+                    <li>Conflict detection across various appointment densities</li>
+                    <li>Search operations for specific doctors or time slots</li>
+                    <li>Report generation with sorting and filtering</li>
+                </ul>
+                <p>The results confirmed O(n log n) performance for scheduling operations and O(log n) for search operations, validating my design choices.</p>
+
+                <h4>Challenge 4: Data Consistency During Concurrent Operations</h4>
+                <p>While implementing scheduling logic, I realized that concurrent appointment requests could create race conditions where two appointments are scheduled for the same slot simultaneously.</p>
+
+                <p><strong>Solution:</strong> Although full multi-threading support wasn't implemented in this milestone, I designed the scheduling algorithm to be thread-safe by:</p>
+                <ul>
+                    <li>Using atomic check-and-schedule operations</li>
+                    <li>Designing repository methods to support transactional behavior</li>
+                    <li>Documenting concurrency considerations for future implementation</li>
+                </ul>
+
+                <h3>Incorporation of Feedback</h3>
+                <p>Early code reviews revealed that my initial scheduling algorithm was difficult to understand and test due to complex nested conditionals. I addressed this feedback by:</p>
+                <ol>
+                    <li><strong>Refactoring into smaller methods:</strong> Breaking the scheduling logic into distinct functions for validation, conflict checking, and insertion</li>
+                    <li><strong>Adding comprehensive comments:</strong> Explaining the reasoning behind each step of the algorithm</li>
+                    <li><strong>Creating helper methods:</strong> Extracting time comparison logic into reusable utility functions</li>
+                    <li><strong>Improving variable naming:</strong> Using descriptive names like <code>potentialConflict</code> instead of <code>temp</code></li>
+                </ol>
+                <p>This refactoring made the code more maintainable and easier for other developers to understand and modify.</p>
+            </div>
+        </div>
+
+        <!-- ACCORDION 5: Meeting Course Outcomes -->
+        <div class="accordion-section">
+            <div class="accordion-header">
+                <div class="accordion-title">
+                    <h2>Meeting Course Outcomes</h2>
+                </div>
+                <span class="accordion-icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <p>This enhancement directly addresses the following course outcomes:</p>
+
+                <h3>Course Outcome 3: Design and Evaluate Computing Solutions</h3>
+                <p>The appointment scheduling enhancement demonstrates my ability to design computing solutions using algorithmic principles. I evaluated trade-offs between different data structures (lists vs. trees vs. hash maps), analyzed time complexity, and chose solutions appropriate for the problem scale. The conflict detection algorithm shows clear application of computer science practices to solve a real-world problem.</p>
+
+                <h3>Course Outcome 4: Well-Founded Techniques and Tools</h3>
+                <p>By implementing standard algorithms (binary search, merge sort concepts, priority queuing) and using appropriate data structures (HashMap, PriorityQueue, TreeSet), I demonstrated proficiency with industry-standard tools. The performance optimization shows my ability to implement solutions that deliver value by reducing computational overhead and improving user experience.</p>
+
+                <h3>Course Outcome 5: Security Mindset</h3>
+                <p>The validation logic in the scheduling algorithm prevents invalid data entry that could compromise system integrity. By checking for null references, validating time ranges, and ensuring appointments meet logical constraints (end time &gt; start time, future dates only), I mitigated potential vulnerabilities. The conflict detection also prevents data inconsistencies that could affect patient care.</p>
+
+                <h3>Course Outcome 2: Professional Communications</h3>
+                <p>The comprehensive documentation of algorithmic logic, time complexity analysis, and design decisions demonstrates my ability to communicate technical concepts clearly. Code comments explain not just what the algorithm does, but why certain approaches were chosen.</p>
+            </div>
+        </div>
+
+        <!-- ACCORDION 6: Algorithms and Data Structures Implemented -->
+        <div class="accordion-section">
+            <div class="accordion-header">
+                <div class="accordion-title">
+                    <h2>Algorithms and Data Structures Implemented</h2>
+                </div>
+                <span class="accordion-icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <h3>Priority Queue for Urgent Appointments</h3>
+                <ul>
+                    <li><strong>Purpose:</strong> Ensure emergency and urgent cases are scheduled before routine appointments</li>
+                    <li><strong>Time Complexity:</strong> O(log n) for insertion and removal</li>
+                    <li><strong>Benefits:</strong> Automatic priority-based ordering</li>
+                </ul>
+
+                <h3>HashMap for Record Lookup</h3>
+                <ul>
+                    <li><strong>Purpose:</strong> Fast retrieval of doctor and patient records by ID</li>
+                    <li><strong>Time Complexity:</strong> O(1) average case for lookup</li>
+                    <li><strong>Benefits:</strong> Eliminates linear search through all records</li>
+                </ul>
+
+                <h3>Sorted Lists for Chronological Ordering</h3>
+                <ul>
+                    <li><strong>Purpose:</strong> Maintain appointments in time order for conflict detection and reporting</li>
+                    <li><strong>Time Complexity:</strong> O(n log n) for sorting, O(log n) for binary search</li>
+                    <li><strong>Benefits:</strong> Efficient range queries and interval overlap detection</li>
+                </ul>
+
+                <h3>Conflict Detection Algorithm</h3>
+                <div class="info-box">
+                    <p><strong>For each new appointment:</strong></p>
+                    <ol>
+                        <li>Retrieve doctor's existing appointments (O(1) using HashMap)</li>
+                        <li>Binary search for potential conflicts (O(log n))</li>
+                        <li>Check interval overlaps using time comparison (O(1))</li>
+                        <li>Accept or reject based on result</li>
+                    </ol>
+                    <p><strong>Total: O(log n) per appointment</strong></p>
+                </div>
+
+                <h3>Time Normalization Functions</h3>
+                <ul>
+                    <li>Standardize all time inputs to consistent format</li>
+                    <li>Handle edge cases (midnight boundaries, timezone considerations)</li>
+                    <li>Enable reliable time-based comparisons</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ACCORDION 7: Tools and Technologies -->
+        <div class="accordion-section">
+            <div class="accordion-header">
+                <div class="accordion-title">
+                    <h2>Tools and Technologies Used</h2>
+                </div>
+                <span class="accordion-icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <ul>
+                    <li><strong>Java Collections Framework:</strong> HashMap, TreeSet, PriorityQueue</li>
+                    <li><strong>Java Time API:</strong> LocalDateTime, Duration, Period</li>
+                    <li><strong>Algorithm Analysis:</strong> Big O notation, time complexity evaluation</li>
+                    <li><strong>Testing Framework:</strong> JUnit for unit testing algorithmic correctness</li>
+                    <li><strong>Profiling Tools:</strong> Used to measure and validate performance claims</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ACCORDION 8: Next Steps -->
+        <div class="accordion-section">
+            <div class="accordion-header">
+                <div class="accordion-title">
+                    <h2>Next Steps</h2>
+                </div>
+                <span class="accordion-icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <p>The algorithmic improvements in this enhancement enable several future enhancements:</p>
+                <ol>
+                    <li><strong>Machine Learning Integration:</strong> Use historical scheduling data to predict appointment durations and optimize scheduling</li>
+                    <li><strong>Advanced Reporting:</strong> Generate analytics on scheduling patterns, doctor utilization, and patient wait times</li>
+                    <li><strong>Recommendation Engine:</strong> Suggest optimal appointment times based on multiple factors</li>
+                    <li><strong>Resource Optimization:</strong> Extend algorithms to schedule rooms, equipment, and staff beyond just doctors</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- ACCORDION 9: Conclusion -->
+        <div class="accordion-section">
+            <div class="accordion-header">
+                <div class="accordion-title">
+                    <h2>Conclusion</h2>
+                </div>
+                <span class="accordion-icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <p>Enhancement 2 transformed the Hospital Management System's scheduling capabilities from basic appointment creation to an intelligent, efficient, and scalable scheduling engine. By applying advanced algorithms and carefully selected data structures, I demonstrated my ability to solve complex problems with computer science principles. The performance optimizations, conflict detection logic, and priority-based scheduling reflect industry-standard approaches to healthcare system design. This enhancement showcases my growth in algorithmic thinking and my ability to evaluate and implement efficient solutions to real-world computational challenges.</p>
+            </div>
+        </div>
 
         <div style="margin-top: 3rem; text-align: center;">
             <a href="enhancement1.html" class="btn">← Previous: Software Design</a>
@@ -253,7 +325,9 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 Valerie Dawson | CS 499 Computer Science Capstone | Southern New Hampshire University</p>
+        <p>&copy; 2025 Valerie Dawson | Southern New Hampshire University</p>
     </footer>
+
+    <script src="js/accordion.js"></script>
 </body>
 </html>

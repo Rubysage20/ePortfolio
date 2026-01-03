@@ -10,9 +10,11 @@
 <body>
     <header>
         <div class="container">
-            <h1>Valerie Dawson</h1>
-            <p>Computer Science Capstone ePortfolio | CS 499</p>
-            <p>Southern New Hampshire University</p>
+            <div class="header-content">
+                <h1>Valerie Dawson</h1>
+                <p class="header-subtitle">Computer Science Graduate</p>
+                <p class="header-meta">Southern New Hampshire University</p>
+            </div>
         </div>
     </header>
 
@@ -42,116 +44,154 @@
             </iframe>
         </div>
 
-        <h2>Code Review Overview</h2>
-        <p>The code review video provides a comprehensive walkthrough of the Hospital Management System's evolution from a basic console application to a production-ready full-stack web application. This presentation demonstrates my understanding of software engineering principles, analytical thinking, and ability to communicate technical concepts effectively.</p>
-
-        <h2>Code Review Highlights</h2>
-        
-        <h3>Part 1: Original Code Walkthrough</h3>
-        <ul>
-            <li><strong>File Structure:</strong> Review of the original monolithic Java application with flat architecture</li>
-            <li><strong>Data Storage:</strong> Analysis of fixed-size arrays limiting scalability (Doctor[], Patient[], Employee[])</li>
-            <li><strong>Console Interface:</strong> Demonstration of basic menu system with limited functionality</li>
-            <li><strong>CRUD Operations:</strong> Examination of simple but inefficient data manipulation methods</li>
-            <li><strong>Lack of Persistence:</strong> Highlighting that all data was lost when the program closed</li>
-        </ul>
-
-        <h3>Part 2: Code Analysis - Areas for Improvement</h3>
-        
-        <h4>Software Design Issues:</h4>
-        <ul>
-            <li>Lack of modularity - all logic in one or two classes</li>
-            <li>No abstraction layer for data access</li>
-            <li>Poor scalability due to fixed capacity constraints</li>
-            <li>Insufficient validation and error handling</li>
-            <li>Minimal documentation and comments</li>
-        </ul>
-
-        <h4>Algorithmic Issues:</h4>
-        <ul>
-            <li>Inefficient linear search (O(n) complexity)</li>
-            <li>No conflict detection for appointment scheduling</li>
-            <li>No priority handling for urgent cases</li>
-            <li>Manual payroll calculations not based on actual data</li>
-        </ul>
-
-        <h4>Database Issues:</h4>
-        <ul>
-            <li>Complete absence of persistent storage</li>
-            <li>All data existed only in memory</li>
-            <li>No way to share data across systems</li>
-            <li>Unsuitable for real hospital operations</li>
-        </ul>
-
-        <h3>Part 3: Enhancement Plan and Outcomes</h3>
-        
-        <h4>Enhancement 1: Software Design and Engineering</h4>
-        <ul>
-            <li><strong>Layered Architecture:</strong> Implemented separation of concerns with model, repository, service, and controller layers</li>
-            <li><strong>Repository Pattern:</strong> Created interfaces that abstract data access from business logic</li>
-            <li><strong>Validation Utilities:</strong> Centralized validation logic for consistency</li>
-            <li><strong>Documentation:</strong> Added comprehensive Javadoc and inline comments</li>
-            <li><strong>Result:</strong> Modular, scalable, maintainable architecture following industry standards</li>
-        </ul>
-
-        <h4>Enhancement 2: Algorithms and Data Structures</h4>
-        <ul>
-            <li><strong>HashMap Implementation:</strong> Replaced linear search with O(1) lookup time</li>
-            <li><strong>Conflict Detection:</strong> Implemented algorithm to prevent appointment overlaps</li>
-            <li><strong>Priority Queues:</strong> Added priority-based scheduling for urgent appointments</li>
-            <li><strong>Automated Payroll:</strong> Calculated payroll automatically from appointment data</li>
-            <li><strong>Result:</strong> Performance improved from O(n²) to O(n log n) for critical operations</li>
-        </ul>
-
-        <h4>Enhancement 3: Databases and Full-Stack</h4>
-        <ul>
-            <li><strong>MongoDB Integration:</strong> Added persistent storage with four collections (doctors, patients, appointments, employees)</li>
-            <li><strong>Query Optimization:</strong> Implemented indexes on frequently searched fields</li>
-            <li><strong>Spring Boot API:</strong> Built RESTful backend serving data to front-end</li>
-            <li><strong>React Dashboard:</strong> Created professional web interface with data visualization</li>
-            <li><strong>JWT Authentication:</strong> Implemented secure authentication system</li>
-            <li><strong>Result:</strong> Complete, production-ready full-stack application</li>
-        </ul>
-
-        <h2>Course Outcomes Alignment</h2>
-        
-        <div class="artifact-grid">
-            <div class="artifact-card">
-                <h3>Outcome 1: Collaborative Environments</h3>
-                <p>Code review demonstrates peer communication, comprehensive documentation supports team collaboration, and modular design enables parallel development.</p>
+        <!-- ACCORDION 1: Code Review Overview -->
+        <div class="accordion-section">
+            <div class="accordion-header">
+                <div class="accordion-title">
+                    <h2>Code Review Overview</h2>
+                </div>
+                <span class="accordion-icon">▼</span>
             </div>
-
-            <div class="artifact-card">
-                <h3>Outcome 2: Professional Communications</h3>
-                <p>Video presentation showcases ability to explain technical concepts clearly, narratives are well-written and adapted to audience, and code comments facilitate understanding.</p>
-            </div>
-
-            <div class="artifact-card">
-                <h3>Outcome 3: Computing Solutions</h3>
-                <p>Algorithms solve real-world healthcare problems, design patterns address scalability needs, and trade-offs are managed appropriately.</p>
-            </div>
-
-            <div class="artifact-card">
-                <h3>Outcome 4: Techniques and Tools</h3>
-                <p>Modern frameworks (Spring Boot, React) demonstrate industry-standard practices, efficient algorithms deliver value, and professional development tools are used effectively.</p>
-            </div>
-
-            <div class="artifact-card">
-                <h3>Outcome 5: Security Mindset</h3>
-                <p>Input validation prevents vulnerabilities, JWT authentication secures access, BCrypt protects passwords, and error handling maintains system stability.</p>
+            <div class="accordion-content">
+                <p>The code review video provides a comprehensive walkthrough of the Hospital Management System's evolution from a basic console application to a production-ready full-stack web application. This presentation demonstrates my understanding of software engineering principles, analytical thinking, and ability to communicate technical concepts effectively.</p>
             </div>
         </div>
 
-        <h2>Key Takeaways</h2>
-        <p>The code review demonstrates my ability to:</p>
-        <ul>
-            <li>Analyze existing code critically and identify areas for improvement</li>
-            <li>Articulate technical concepts in an accessible, professional manner</li>
-            <li>Plan and execute systematic enhancements across multiple domains</li>
-            <li>Apply computer science principles to solve real-world problems</li>
-            <li>Document and communicate design decisions effectively</li>
-            <li>Align technical work with professional course outcomes</li>
-        </ul>
+        <!-- ACCORDION 2: Code Review Highlights -->
+        <div class="accordion-section">
+            <div class="accordion-header">
+                <div class="accordion-title">
+                    <h2>Code Review Highlights</h2>
+                </div>
+                <span class="accordion-icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <h3>Part 1: Original Code Walkthrough</h3>
+                <ul>
+                    <li><strong>File Structure:</strong> Review of the original monolithic Java application with flat architecture</li>
+                    <li><strong>Data Storage:</strong> Analysis of fixed-size arrays limiting scalability (Doctor[], Patient[], Employee[])</li>
+                    <li><strong>Console Interface:</strong> Demonstration of basic menu system with limited functionality</li>
+                    <li><strong>CRUD Operations:</strong> Examination of simple but inefficient data manipulation methods</li>
+                    <li><strong>Lack of Persistence:</strong> Highlighting that all data was lost when the program closed</li>
+                </ul>
+
+                <h3>Part 2: Code Analysis - Areas for Improvement</h3>
+                
+                <h4>Software Design Issues:</h4>
+                <ul>
+                    <li>Lack of modularity - all logic in one or two classes</li>
+                    <li>No abstraction layer for data access</li>
+                    <li>Poor scalability due to fixed capacity constraints</li>
+                    <li>Insufficient validation and error handling</li>
+                    <li>Minimal documentation and comments</li>
+                </ul>
+
+                <h4>Algorithmic Issues:</h4>
+                <ul>
+                    <li>Inefficient linear search (O(n) complexity)</li>
+                    <li>No conflict detection for appointment scheduling</li>
+                    <li>No priority handling for urgent cases</li>
+                    <li>Manual payroll calculations not based on actual data</li>
+                </ul>
+
+                <h4>Database Issues:</h4>
+                <ul>
+                    <li>Complete absence of persistent storage</li>
+                    <li>All data existed only in memory</li>
+                    <li>No way to share data across systems</li>
+                    <li>Unsuitable for real hospital operations</li>
+                </ul>
+
+                <h3>Part 3: Enhancement Plan and Outcomes</h3>
+                
+                <h4>Enhancement 1: Software Design and Engineering</h4>
+                <ul>
+                    <li><strong>Layered Architecture:</strong> Implemented separation of concerns with model, repository, service, and controller layers</li>
+                    <li><strong>Repository Pattern:</strong> Created interfaces that abstract data access from business logic</li>
+                    <li><strong>Validation Utilities:</strong> Centralized validation logic for consistency</li>
+                    <li><strong>Documentation:</strong> Added comprehensive Javadoc and inline comments</li>
+                    <li><strong>Result:</strong> Modular, scalable, maintainable architecture following industry standards</li>
+                </ul>
+
+                <h4>Enhancement 2: Algorithms and Data Structures</h4>
+                <ul>
+                    <li><strong>HashMap Implementation:</strong> Replaced linear search with O(1) lookup time</li>
+                    <li><strong>Conflict Detection:</strong> Implemented algorithm to prevent appointment overlaps</li>
+                    <li><strong>Priority Queues:</strong> Added priority-based scheduling for urgent appointments</li>
+                    <li><strong>Automated Payroll:</strong> Calculated payroll automatically from appointment data</li>
+                    <li><strong>Result:</strong> Performance improved from O(n²) to O(n log n) for critical operations</li>
+                </ul>
+
+                <h4>Enhancement 3: Databases and Full-Stack</h4>
+                <ul>
+                    <li><strong>MongoDB Integration:</strong> Added persistent storage with four collections (doctors, patients, appointments, employees)</li>
+                    <li><strong>Query Optimization:</strong> Implemented indexes on frequently searched fields</li>
+                    <li><strong>Spring Boot API:</strong> Built RESTful backend serving data to front-end</li>
+                    <li><strong>React Dashboard:</strong> Created professional web interface with data visualization</li>
+                    <li><strong>JWT Authentication:</strong> Implemented secure authentication system</li>
+                    <li><strong>Result:</strong> Complete, production-ready full-stack application</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ACCORDION 3: Course Outcomes Alignment -->
+        <div class="accordion-section">
+            <div class="accordion-header">
+                <div class="accordion-title">
+                    <h2>Course Outcomes Alignment</h2>
+                </div>
+                <span class="accordion-icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <div class="artifact-grid">
+                    <div class="artifact-card">
+                        <h3>Outcome 1: Collaborative Environments</h3>
+                        <p>Code review demonstrates peer communication, comprehensive documentation supports team collaboration, and modular design enables parallel development.</p>
+                    </div>
+
+                    <div class="artifact-card">
+                        <h3>Outcome 2: Professional Communications</h3>
+                        <p>Video presentation showcases ability to explain technical concepts clearly, narratives are well-written and adapted to audience, and code comments facilitate understanding.</p>
+                    </div>
+
+                    <div class="artifact-card">
+                        <h3>Outcome 3: Computing Solutions</h3>
+                        <p>Algorithms solve real-world healthcare problems, design patterns address scalability needs, and trade-offs are managed appropriately.</p>
+                    </div>
+
+                    <div class="artifact-card">
+                        <h3>Outcome 4: Techniques and Tools</h3>
+                        <p>Modern frameworks (Spring Boot, React) demonstrate industry-standard practices, efficient algorithms deliver value, and professional development tools are used effectively.</p>
+                    </div>
+
+                    <div class="artifact-card">
+                        <h3>Outcome 5: Security Mindset</h3>
+                        <p>Input validation prevents vulnerabilities, JWT authentication secures access, BCrypt protects passwords, and error handling maintains system stability.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ACCORDION 4: Key Takeaways -->
+        <div class="accordion-section">
+            <div class="accordion-header">
+                <div class="accordion-title">
+                    <h2>Key Takeaways</h2>
+                </div>
+                <span class="accordion-icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <p>The code review demonstrates my ability to:</p>
+                <ul>
+                    <li>Analyze existing code critically and identify areas for improvement</li>
+                    <li>Articulate technical concepts in an accessible, professional manner</li>
+                    <li>Plan and execute systematic enhancements across multiple domains</li>
+                    <li>Apply computer science principles to solve real-world problems</li>
+                    <li>Document and communicate design decisions effectively</li>
+                    <li>Align technical work with professional course outcomes</li>
+                </ul>
+            </div>
+        </div>
 
         <div style="margin-top: 2rem;">
             <a href="artifacts.html" class="btn">View Code Artifacts</a>
@@ -161,7 +201,9 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 Valerie Dawson | CS 499 Computer Science Capstone | Southern New Hampshire University</p>
+        <p>&copy; 2025 Valerie Dawson | Southern New Hampshire University</p>
     </footer>
+
+    <script src="js/accordion.js"></script>
 </body>
 </html>
